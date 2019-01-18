@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://senventie.com/about/index.html</loc>
+    <lastmod>2019-01-18</lastmod>
+  </url>  <url>
     <loc>http://senventie.com/2018/08/03/ML-01/</loc>
     <lastmod>2019-01-18</lastmod>
   </url>  <url>
@@ -15,8 +18,5 @@
   </url>  <url>
     <loc>http://senventie.com/2018/05/28/2018-5-28-My-first-blog/</loc>
     <lastmod>2019-01-15</lastmod>
-  </url>  <url>
-    <loc>http://senventie.com/about/index.html</loc>
-    <lastmod>2019-01-13</lastmod>
   </url>
 </urlset>

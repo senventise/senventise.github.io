@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://senventie.com/about/index.html</loc>
+    
+    <lastmod>2019-01-18T07:59:23.787Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://senventie.com/2018/08/03/ML-01/</loc>
     
     <lastmod>2019-01-18T05:15:36.378Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://senventie.com/2018/05/28/2018-5-28-My-first-blog/</loc>
     
     <lastmod>2019-01-15T11:05:32.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://senventie.com/about/index.html</loc>
-    
-    <lastmod>2019-01-13T12:26:55.089Z</lastmod>
     
   </url>
   
