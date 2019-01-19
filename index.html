@@ -131,6 +131,63 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 151 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/19/解决archlinux下无法打开atom终端问题/">解决archlinux下无法打开atom终端的问题</a>
+            
+        </h1>
+        <div class="content">
+            <p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
+<p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p>
+<p>​    </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
+<p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/01/19/解决archlinux下无法打开atom终端问题/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-01-15T11:02:35.000Z">2019-01-15</time>
                 
                 <div class="level-item">
@@ -153,7 +210,7 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p>HP39gII 貌似 bug 不少，已经死机了好几次了，而且死机以后未保存的数据会丢失，很烦，前两天在编程玩的时候又一次死机了…<br></p>
+            <p>HP39gII 貌似 bug 不少，已经死机了好几次了，而且死机以后未保存的数据会丢失，很烦，前两天在编程玩的时候又一次死机了…<br>而且死机就以后打不开了，卡在 HP logo 的开机界面，百度了一下，貌似只能重刷固件，但是连接工具打不开…    </p>
         </div>
         
         
@@ -257,7 +314,9 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p><strong><em>emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。</em></strong><br></p>
+            <p>emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。   </p>
+<h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p>
+<h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置–&gt;网络适配器–&gt;桥接模式,解决。  </p>
         </div>
         
         
@@ -310,7 +369,8 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <h2 id="什么是泛型？"><a href="#什么是泛型？" class="headerlink" title="什么是泛型？"></a>什么是泛型？</h2><blockquote>
-<p>&emsp;&emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。<br></p></blockquote>
+<p>&emsp;&emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。<br><strong>参数不可以是原始数据类型</strong>  </p>
+</blockquote>
         </div>
         
         
@@ -419,7 +479,7 @@ var _hmt = _hmt || [];
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -439,7 +499,7 @@ var _hmt = _hmt || [];
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -490,7 +550,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/life/">
@@ -512,7 +572,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 10px;">ArchLinux</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -526,6 +586,19 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -579,19 +652,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time></div>
-                    <a href="/2018/05/28/2018-5-28-My-first-blog/" class="has-link-black-ter is-size-6">第一篇博客！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/life/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -610,7 +670,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -671,6 +731,13 @@ var _hmt = _hmt || [];
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ArchLinux/">
+                        <span class="tag">ArchLinux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
@@ -720,6 +787,19 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-15T11:02:35.000Z">2019-01-15</time></div>
                     <a href="/2019/01/15/HP39gII-死机修复/" class="has-link-black-ter is-size-6">HP39gII 死机修复</a>
                     <p class="is-size-7 is-uppercase">
@@ -768,19 +848,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time></div>
-                    <a href="/2018/05/28/2018-5-28-My-first-blog/" class="has-link-black-ter is-size-6">第一篇博客！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/life/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -799,7 +866,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -860,6 +927,13 @@ var _hmt = _hmt || [];
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ArchLinux/">
+                        <span class="tag">ArchLinux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">

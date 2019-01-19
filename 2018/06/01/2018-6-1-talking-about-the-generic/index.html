@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。">
+    <meta name="description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。参数不可以是原始数据类型">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈泛型">
 <meta property="og:url" content="http://senventie.com/2018/06/01/2018-6-1-talking-about-the-generic/index.html">
 <meta property="og:site_name" content="Senventise&#39;s Bolg">
-<meta property="og:description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。">
+<meta property="og:description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。参数不可以是原始数据类型">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-17T13:03:36.931Z">
+<meta property="og:updated_time" content="2019-01-19T04:34:24.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈泛型">
-<meta name="twitter:description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。">
+<meta name="twitter:description" content="什么是泛型？ &amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。参数不可以是原始数据类型">
 
 
 
@@ -157,9 +157,11 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <h2 id="什么是泛型？"><a href="#什么是泛型？" class="headerlink" title="什么是泛型？"></a>什么是泛型？</h2><blockquote>
-<p>&emsp;&emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。<br><a id="more"></a><br><strong>参数不可以是原始数据类型</strong></p>
+<p>&emsp;&emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。<br><strong>参数不可以是原始数据类型</strong>  </p>
 </blockquote>
-<p>例如:<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gen</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> T ob; <span class="hljs-comment">//定义泛型成员变量</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Gen</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getOb</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOb</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">         <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showType</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">//定义泛型类Gen的一个Integer版本</span></span><br><span class="line">        Gen&lt;Integer&gt; intOb = <span class="hljs-keyword">new</span> Gen&lt;Integer&gt;(<span class="hljs-number">88</span>);</span><br><span class="line">	    intOb.showType();</span><br><span class="line">	    <span class="hljs-keyword">int</span> i = intOb.getOb();</span><br><span class="line">	    System.out.println(<span class="hljs-string">"value= "</span> + i);</span><br><span class="line">	    System.out.println(<span class="hljs-string">"----------------------------------"</span>);</span><br><span class="line">	    <span class="hljs-comment">//定义泛型类Gen的一个String版本</span></span><br><span class="line">	    Gen&lt;String&gt; strOb = <span class="hljs-keyword">new</span> Gen&lt;String&gt;(<span class="hljs-string">"Hello Gen!"</span>);</span><br><span class="line">	    strOb.showType();</span><br><span class="line">	    String s = strOb.getOb();</span><br><span class="line">	    System.out.println(<span class="hljs-string">"value= "</span> + s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>例如:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gen</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> T ob; <span class="hljs-comment">//定义泛型成员变量</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Gen</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getOb</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOb</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">         <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showType</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">//定义泛型类Gen的一个Integer版本</span></span><br><span class="line">        Gen&lt;Integer&gt; intOb = <span class="hljs-keyword">new</span> Gen&lt;Integer&gt;(<span class="hljs-number">88</span>);</span><br><span class="line">	    intOb.showType();</span><br><span class="line">	    <span class="hljs-keyword">int</span> i = intOb.getOb();</span><br><span class="line">	    System.out.println(<span class="hljs-string">"value= "</span> + i);</span><br><span class="line">	    System.out.println(<span class="hljs-string">"----------------------------------"</span>);</span><br><span class="line">	    <span class="hljs-comment">//定义泛型类Gen的一个String版本</span></span><br><span class="line">	    Gen&lt;String&gt; strOb = <span class="hljs-keyword">new</span> Gen&lt;String&gt;(<span class="hljs-string">"Hello Gen!"</span>);</span><br><span class="line">	    strOb.showType();</span><br><span class="line">	    String s = strOb.getOb();</span><br><span class="line">	    System.out.println(<span class="hljs-string">"value= "</span> + s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><blockquote>
 <p>泛型类型用于类的定义中，被称为泛型类。通过泛型可以完成对一组类的操作对外开放相同的接口。最典型的就是各种容器类，如：List、Set、Map。</p>
 </blockquote>
@@ -307,7 +309,7 @@ var _hmt = _hmt || [];
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -327,7 +329,7 @@ var _hmt = _hmt || [];
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -378,7 +380,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/life/">
@@ -400,7 +402,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 10px;">ArchLinux</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -414,6 +416,19 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -467,19 +482,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time></div>
-                    <a href="/2018/05/28/2018-5-28-My-first-blog/" class="has-link-black-ter is-size-6">第一篇博客！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/life/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -498,7 +500,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -559,6 +561,13 @@ var _hmt = _hmt || [];
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ArchLinux/">
+                        <span class="tag">ArchLinux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
@@ -608,6 +617,19 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-15T11:02:35.000Z">2019-01-15</time></div>
                     <a href="/2019/01/15/HP39gII-死机修复/" class="has-link-black-ter is-size-6">HP39gII 死机修复</a>
                     <p class="is-size-7 is-uppercase">
@@ -656,19 +678,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time></div>
-                    <a href="/2018/05/28/2018-5-28-My-first-blog/" class="has-link-black-ter is-size-6">第一篇博客！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/life/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -687,7 +696,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -748,6 +757,13 @@ var _hmt = _hmt || [];
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ArchLinux/">
+                        <span class="tag">ArchLinux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">

@@ -2,19 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>归档: 2018/6 - Senventise&#39;s Bolg</title>
+<title>解决archlinux下无法打开atom终端的问题 - Senventise&#39;s Bolg</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="senventise">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Senventise&#39;s Bolg">
-<meta property="og:url" content="http://senventie.com/archives/2018/06/index.html">
+    <meta name="description" content="某次滚动更新以后忽然发现 Atom 的终端不能用了（platformio-atom-ide-terminal），到 issues 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：   12$ cd ~/.atom/packages/platformio-ide-terminal$ vim lib/process.coffee 将第一行的 pty = require">
+<meta name="keywords" content="ArchLinux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决archlinux下无法打开atom终端的问题">
+<meta property="og:url" content="http://senventie.com/2019/01/19/解决archlinux下无法打开atom终端问题/index.html">
 <meta property="og:site_name" content="Senventise&#39;s Bolg">
+<meta property="og:description" content="某次滚动更新以后忽然发现 Atom 的终端不能用了（platformio-atom-ide-terminal），到 issues 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：   12$ cd ~/.atom/packages/platformio-ide-terminal$ vim lib/process.coffee 将第一行的 pty = require">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-19T04:34:00.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Senventise&#39;s Bolg">
+<meta name="twitter:title" content="解决archlinux下无法打开atom终端的问题">
+<meta name="twitter:description" content="某次滚动更新以后忽然发现 Atom 的终端不能用了（platformio-atom-ide-terminal），到 issues 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：   12$ cd ~/.atom/packages/platformio-ide-terminal$ vim lib/process.coffee 将第一行的 pty = require">
 
 
 
@@ -87,7 +91,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Bolg" height="28">
+                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="解决archlinux下无法打开atom终端的问题" height="28">
             
             </a>
         </div>
@@ -124,35 +128,131 @@ var _hmt = _hmt || [];
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        六月 2018
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-06-01T04:13:14.000Z">2018-06-01</time>
-                        <a href="/2018/06/01/2018-6-1-talking-about-the-generic/" class="has-link-black-ter is-size-6">浅谈泛型</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                 </div>
-            </article>
-        
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 151 个字)
+                </span>
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                解决archlinux下无法打开atom终端的问题
+            
+        </h1>
+        <div class="content">
+            <p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
+<p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p>
+<p>​    </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
+<p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
+<a id="more"></a>     
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></table></figure>
+<p>然后重启 atom，ctrl+`成功打开。  </p>
+<p><a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632#issuecomment-451720322" target="_blank" rel="noopener">出处</a>在此</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ArchLinux/">ArchLinux</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay.png">
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay_qr.png" alt="支付宝"></div>
+</a>
+
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/tencent_wechat.png">
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/wx_pay.png" alt="微信"></div>
+</a>
+
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/15/HP39gII-死机修复/">
+                <span class="level-item">HP39gII 死机修复</span>
+                <i data-feather="arrow-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'f0d745d0bf6b7018d673',
+        clientSecret: '3f66235aacc950baeafebb7291ee8412e2cf668b',
+        id: '5f569a912ff48af8251053e8b1396691',
+        repo: 'senventise.github.io',
+        owner: 'senventise',
+        admin: ["senventise"]
+    })
+    gitalk.render('comment-container')
+</script>
+
     </div>
 </div>
 
@@ -692,7 +792,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Bolg" height="512">
+                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="解决archlinux下无法打开atom终端的问题" height="512">
                 
                 </a>
                 <p class="is-size-7">
