@@ -168,7 +168,7 @@ body.light #dark{
     -ms-transition: all .2s;
 }
 .switcher .sw_btn {
-    background: url('../img/btn.png') 0% 0% no-repeat;
+    background: url('https://blog-1256129046.cos.ap-shanghai.myqcloud.com/404/btn.png') 0% 0% no-repeat;
     width: 42px;
     height: 45px;
     display: block;
@@ -178,7 +178,7 @@ body.light #dark{
     top: 22px;
     left: 65px;
 }
-.switcher .bg { background: url('../img/bg_btn.png') 0% 0% no-repeat; }
+.switcher .bg { background: url('https://blog-1256129046.cos.ap-shanghai.myqcloud.com/404/bg_btn.png') 0% 0% no-repeat; }
 .switcher input.switcher-value { display: none; }
 .switcher .bg {
     width: 100%;
@@ -220,7 +220,7 @@ body.light #dark{
     margin: -100px 0 0 -100px;
     width: 200px;
     height: 200px;
-    background-image: url("../img/ajax-loader.gif");
+    background-image: url("https://blog-1256129046.cos.ap-shanghai.myqcloud.com/404/ajax-loader.gif");
     background-position: center;
     background-repeat: no-repeat;
 }
