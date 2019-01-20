@@ -2,23 +2,19 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>第一篇博客！ - Senventise&#39;s Bolg</title>
+<title>分类: 杂谈 - Senventise&#39;s Bolg</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="纪念第一篇博客">
-<meta name="keywords" content="senventise">
-<meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客！">
-<meta property="og:url" content="http://senventise.com/2018/05/28/2018-5-28-My-first-blog/index.html">
+    <meta name="keywords" content="senventise">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Senventise&#39;s Bolg">
+<meta property="og:url" content="http://senventise.com/categories/others/index.html">
 <meta property="og:site_name" content="Senventise&#39;s Bolg">
-<meta property="og:description" content="纪念第一篇博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-20T09:16:35.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客！">
-<meta name="twitter:description" content="纪念第一篇博客">
+<meta name="twitter:title" content="Senventise&#39;s Bolg">
 
 
 
@@ -91,7 +87,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="第一篇博客！" height="28">
+                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Bolg" height="28">
             
             </a>
         </div>
@@ -129,22 +125,34 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">杂谈</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time>
+                <time class="level-item has-text-grey" datetime="2019-01-20T08:36:13.000Z">2019-01-20</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/life/">生活</a>
+                <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 14 个字)
+                    1 分钟 读完 (大约 221 个字)
                 </span>
                 
             </div>
@@ -152,14 +160,38 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                第一篇博客！
+                <a class="has-link-black-ter" href="/2019/01/20/archlinux滚挂/">archlinux滚挂</a>
             
         </h1>
         <div class="content">
-            <h1 id="My-first-blog-here"><a href="#My-first-blog-here" class="headerlink" title="My first blog here!"></a>My first blog here!</h1><p>Written by vim on termux,without Chinese input method support.</p>
-<blockquote>
-<p>5/27/2018 21:58</p>
-</blockquote>
+            <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
+<p>输出如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
+<p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p>
+<ol>
+<li><p>进入 livecd </p>
+</li>
+<li><p>挂载相应分区：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>chroot:</p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新系统：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出 chroot：</p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 grub 配置：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p> ​    </p>
+</li>
+</ol>
+<p><a href="https://unix.stackexchange.com/questions/377373/cannot-start-archlinux-after-update-cannot-find-uuid" target="_blank" rel="noopener">出处</a></p>
 
         </div>
         
@@ -170,76 +202,10 @@ var _hmt = _hmt || [];
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay.png">
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay_qr.png" alt="支付宝"></div>
-</a>
-
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/tencent_wechat.png">
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/wx_pay.png" alt="微信"></div>
-</a>
-
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/06/01/2018-6-1-talking-about-the-generic/">
-                <i data-feather="arrow-left"></i>
-                <span class="level-item">浅谈泛型</span>
-            </a>
-        </div>
-        
-        
-    </div>
-</div>
 
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: 'f0d745d0bf6b7018d673',
-        clientSecret: '3f66235aacc950baeafebb7291ee8412e2cf668b',
-        id: 'd78c7ef5de8e29b4ababa81ca09d7b9e',
-        repo: 'senventise.github.io',
-        owner: 'senventise',
-        admin: ["senventise"]
-    })
-    gitalk.render('comment-container')
-</script>
-
-    </div>
-</div>
 
 
 </div>
@@ -781,7 +747,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="第一篇博客！" height="512">
+                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Bolg" height="512">
                 
                 </a>
                 <p id="baidu"></p>
