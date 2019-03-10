@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://senventise.com/2019/01/20/archlinux%E6%BB%9A%E6%8C%82/</loc>
+    <loc>https://www.senventise.com/2019/03/10/%E6%96%B0%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AAGalgame%E8%AE%B0%E5%BD%95%E9%A1%B5%E9%9D%A2/</loc>
+    <lastmod>2019-03-10</lastmod>
+  </url>  <url>
+    <loc>https://www.senventise.com/2019/01/20/archlinux%E6%BB%9A%E6%8C%82/</loc>
     <lastmod>2019-01-20</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2019/01/15/HP39gII-%E6%AD%BB%E6%9C%BA%E4%BF%AE%E5%A4%8D/</loc>
+    <loc>https://www.senventise.com/2019/01/15/HP39gII-%E6%AD%BB%E6%9C%BA%E4%BF%AE%E5%A4%8D/</loc>
     <lastmod>2019-01-20</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2018/07/09/problems-with-kali-linux-installation/</loc>
+    <loc>https://www.senventise.com/2018/07/09/problems-with-kali-linux-installation/</loc>
     <lastmod>2019-01-20</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2018/06/01/2018-6-1-talking-about-the-generic/</loc>
+    <loc>https://www.senventise.com/2018/06/01/2018-6-1-talking-about-the-generic/</loc>
     <lastmod>2019-01-20</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2018/05/28/2018-5-28-My-first-blog/</loc>
+    <loc>https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/</loc>
     <lastmod>2019-01-20</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2019/01/19/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8B%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80atom%E7%BB%88%E7%AB%AF%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://www.senventise.com/2019/01/19/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8B%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80atom%E7%BB%88%E7%AB%AF%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-01-19</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/about/index.html</loc>
+    <loc>https://www.senventise.com/about/index.html</loc>
     <lastmod>2019-01-18</lastmod>
   </url>  <url>
-    <loc>http://senventise.com/2018/08/03/ML-01/</loc>
+    <loc>https://www.senventise.com/2018/08/03/ML-01/</loc>
     <lastmod>2019-01-18</lastmod>
   </url>
 </urlset>

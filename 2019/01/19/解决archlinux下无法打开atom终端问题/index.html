@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>解决archlinux下无法打开atom终端的问题 - Senventise&#39;s Bolg</title>
+<title>解决archlinux下无法打开atom终端的问题 - Senventise&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -11,8 +11,8 @@
 <meta name="keywords" content="ArchLinux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决archlinux下无法打开atom终端的问题">
-<meta property="og:url" content="http://senventise.com/2019/01/19/解决archlinux下无法打开atom终端问题/index.html">
-<meta property="og:site_name" content="Senventise&#39;s Bolg">
+<meta property="og:url" content="https://www.senventise.com/2019/01/19/解决archlinux下无法打开atom终端问题/index.html">
+<meta property="og:site_name" content="Senventise&#39;s Blog">
 <meta property="og:description" content="某次滚动更新以后忽然发现 Atom 的终端不能用了（platformio-atom-ide-terminal），到 issues 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：   12$ cd ~/.atom/packages/platformio-ide-terminal$ vim lib/process.coffee 将第一行的 pty = require">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-19T04:34:00.371Z">
@@ -156,17 +156,35 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
-<p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p>
-<p>​    </p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
-<p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
+            <p>&#x67D0;&#x6B21;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x4EE5;&#x540E;&#x5FFD;&#x7136;&#x53D1;&#x73B0; Atom &#x7684;&#x7EC8;&#x7AEF;&#x4E0D;&#x80FD;&#x7528;&#x4E86;&#xFF08;<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>&#xFF09;&#xFF0C;&#x5230; <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> &#x91CC;&#x7FFB;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x8C8C;&#x4F3C;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x90FD;&#x662F; Manjaro/Arch &#x7528;&#x6237;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x5C06;&#x7B2C;&#x4E00;&#x884C;&#x7684; <code>pty = require &apos;pty.js&apos;</code> &#x6539;&#x4E3A; <code>pty = require &apos;node-pty-prebuilt&apos;</code>     </p>
+<p>&#x200B;    </p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF1A;<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
 <a id="more"></a>     
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></table></figure>
-<p>然后重启 atom，ctrl+`成功打开。  </p>
-<p><a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632#issuecomment-451720322" target="_blank" rel="noopener">出处</a>在此</p>
-
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></tbody></table></figure>
+<p>&#x7136;&#x540E;&#x91CD;&#x542F; atom&#xFF0C;ctrl+`&#x6210;&#x529F;&#x6253;&#x5F00;&#x3002;  </p>
+<p><a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632#issuecomment-451720322" target="_blank" rel="noopener">&#x51FA;&#x5904;</a>&#x5728;&#x6B64;</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -301,7 +319,7 @@ var _hmt = _hmt || [];
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -321,7 +339,7 @@ var _hmt = _hmt || [];
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -380,7 +398,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">杂谈</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/life/">
@@ -402,7 +420,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 10px;">Galgame</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -416,6 +434,19 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T08:31:25.000Z">2019-03-10</time></div>
+                    <a href="/2019/03/10/新建了一个Galgame记录页面/" class="has-link-black-ter is-size-6">新建了一个Galgame记录页面</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -469,19 +500,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-09T04:13:14.000Z">2018-07-09</time></div>
-                    <a href="/2018/07/09/problems-with-kali-linux-installation/" class="has-link-black-ter is-size-6">记安装 kali 遇到的坑</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -493,6 +511,17 @@ var _hmt = _hmt || [];
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -566,6 +595,13 @@ var _hmt = _hmt || [];
                     <a class="tags has-addons" href="/tags/ArchLinux/">
                         <span class="tag">ArchLinux</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Galgame/">
+                        <span class="tag">Galgame</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -617,6 +653,19 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T08:31:25.000Z">2019-03-10</time></div>
+                    <a href="/2019/03/10/新建了一个Galgame记录页面/" class="has-link-black-ter is-size-6">新建了一个Galgame记录页面</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-20T08:36:13.000Z">2019-01-20</time></div>
                     <a href="/2019/01/20/archlinux滚挂/" class="has-link-black-ter is-size-6">archlinux滚挂</a>
                     <p class="is-size-7 is-uppercase">
@@ -665,19 +714,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-09T04:13:14.000Z">2018-07-09</time></div>
-                    <a href="/2018/07/09/problems-with-kali-linux-installation/" class="has-link-black-ter is-size-6">记安装 kali 遇到的坑</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -689,6 +725,17 @@ var _hmt = _hmt || [];
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -762,6 +809,13 @@ var _hmt = _hmt || [];
                     <a class="tags has-addons" href="/tags/ArchLinux/">
                         <span class="tag">ArchLinux</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Galgame/">
+                        <span class="tag">Galgame</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
