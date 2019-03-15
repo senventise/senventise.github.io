@@ -109,6 +109,8 @@ var _hmt = _hmt || [];
                 
                 <a class="navbar-item" href="/about">About</a>
                 
+                <a class="navbar-item" href="/galgame">Galgame</a>
+                
             </div>
             
             <div class="navbar-end">
@@ -156,54 +158,36 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p>&#x6628;&#x5929;&#x665A;&#x4E0A;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x4E86;&#x4E00;&#x6B21;&#xFF0C;&#x4ECA;&#x5929;&#x65E9;&#x4E0A;&#x91CD;&#x542F;&#x7535;&#x8111;&#x53D1;&#x73B0;&#x6302;&#x4E86;&#x2026;&#x2026;&#x8FD9;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x6EDA;&#x6302;&#xFF0C;&#x6709;&#x70B9;&#x5174;&#x594B;&#xFF08;#&#x6ED1;&#x7A3D;&#xFF09;  </p>
-<p>&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></tbody></table></figure>
+            <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
+<p>输出如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>&#x63D0;&#x793A;&#x8FDB;&#x5165;&#x4E86; emergency shell &#xFF0C;&#x4F46;&#x662F;&#x952E;&#x76D8;&#x65E0;&#x6CD5;&#x8F93;&#x5165;&#xFF0C; google &#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x627E;&#x5230;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;  </p>
+<p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p>
 <ol>
-<li><p>&#x8FDB;&#x5165; livecd </p>
+<li><p>进入 livecd </p>
 </li>
-<li><p>&#x6302;&#x8F7D;&#x76F8;&#x5E94;&#x5206;&#x533A;&#xFF1A;</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></tbody></table></figure>
+<li><p>挂载相应分区：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>chroot:</p>
- <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></tbody></table></figure>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x66F4;&#x65B0;&#x7CFB;&#x7EDF;&#xFF1A;</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></tbody></table></figure>
+<li><p>更新系统：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x9000;&#x51FA; chroot&#xFF1A;</p>
- <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></tbody></table></figure>
+<li><p>退出 chroot：</p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x66F4;&#x65B0; grub &#x914D;&#x7F6E;&#xFF1A;</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></tbody></table></figure>
+<li><p>更新 grub 配置：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x53D6;&#x6D88;&#x6302;&#x8F7D;&#x5E76;&#x91CD;&#x542F;&#xFF08;&#x8BB0;&#x5F97;&#x5728;BIOS&#x91CC;&#x628A;&#x542F;&#x52A8;&#x987A;&#x5E8F;&#x6539;&#x56DE;&#x6765;&#xFF09;&#xFF1A;</p>
- <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></tbody></table></figure>
-<p> &#x200B;    </p>
+<li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p> ​    </p>
 </li>
 </ol>
-<p><a href="https://unix.stackexchange.com/questions/377373/cannot-start-archlinux-after-update-cannot-find-uuid" target="_blank" rel="noopener">&#x51FA;&#x5904;</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<p><a href="https://unix.stackexchange.com/questions/377373/cannot-start-archlinux-after-update-cannot-find-uuid" target="_blank" rel="noopener">出处</a></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
