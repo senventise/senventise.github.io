@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Senventise&#39;s Blog</title>
+  
+  <subtitle>以梦为码，莫负韶华</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.senventise.com/"/>
+  <updated>2019-03-10T10:49:58.807Z</updated>
+  <id>https://www.senventise.com/</id>
+  
+  <author>
+    <name>Senventise</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新建了一个Galgame记录页面</title>
+    <link href="https://www.senventise.com/2019/03/10/%E6%96%B0%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AAGalgame%E8%AE%B0%E5%BD%95%E9%A1%B5%E9%9D%A2/"/>
+    <id>https://www.senventise.com/2019/03/10/新建了一个Galgame记录页面/</id>
+    <published>2019-03-10T08:31:25.000Z</published>
+    <updated>2019-03-10T10:49:58.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>本来对 Galgame 无感，只玩过《沙耶之歌》和《美少女万华镜1》，寒假太无聊，就把万华镜1重新推了一遍，然后一发不可收拾…甚至有那么一点学日语啃生肉的打算…  </p><a id="more"></a><p>最近硬盘有点装不下了，整理了一下，把存档都保存了下来，本体删掉了，忽然有点舍不得，就想着把推过的 Galgame整理一下(主要是根据存档的时间来判断，毕竟挺久了，有点记不起来)  </p><p>本来是记在 Onenote 上的，但是编辑起来实在难受，就想着用 Markdown 试试，所以干脆扔这里来，反正也没人看💔  </p><p><a href="/galgame">链接在此</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来对 Galgame 无感，只玩过《沙耶之歌》和《美少女万华镜1》，寒假太无聊，就把万华镜1重新推了一遍，然后一发不可收拾…甚至有那么一点学日语啃生肉的打算…  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂谈" scheme="https://www.senventise.com/categories/others/"/>
+    
+    
+      <category term="Galgame" scheme="https://www.senventise.com/tags/Galgame/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>archlinux滚挂</title>
+    <link href="https://www.senventise.com/2019/01/20/archlinux%E6%BB%9A%E6%8C%82/"/>
+    <id>https://www.senventise.com/2019/01/20/archlinux滚挂/</id>
+    <published>2019-01-20T08:36:13.000Z</published>
+    <updated>2019-01-20T09:23:35.736Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p><p>输出如下：</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure><a id="more"></a><p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p><ol><li><p>进入 livecd </p></li><li><p>挂载相应分区：</p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure></li><li><p>chroot:</p> <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure></li><li><p>更新系统：</p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure></li><li><p>退出 chroot：</p> <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure></li><li><p>更新 grub 配置：</p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></li><li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p> <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><p> ​    </p></li></ol><p><a href="https://unix.stackexchange.com/questions/377373/cannot-start-archlinux-after-update-cannot-find-uuid" target="_blank" rel="noopener">出处</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  &lt;/p&gt;
+&lt;p&gt;输出如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;starting version 240&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ERROR: device UUID=xxxxxxx not found.Skipping fsck.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mount: /new_root: Can&amp;apos;t find UUID=xxxxxxx.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;You are now being dropped into an emergency shell.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh: can&amp;apos;t access tty; job control turned off&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="杂谈" scheme="https://www.senventise.com/categories/others/"/>
+    
+    
+      <category term="ArchLinux" scheme="https://www.senventise.com/tags/ArchLinux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决archlinux下无法打开atom终端的问题</title>
+    <link href="https://www.senventise.com/2019/01/19/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8B%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80atom%E7%BB%88%E7%AB%AF%E9%97%AE%E9%A2%98/"/>
+    <id>https://www.senventise.com/2019/01/19/解决archlinux下无法打开atom终端问题/</id>
+    <published>2019-01-19T04:09:25.000Z</published>
+    <updated>2019-01-19T04:34:00.371Z</updated>
+    
+    <content type="html"><![CDATA[<p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure><p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p><p>​    </p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure><p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p><a id="more"></a>     <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></table></figure><p>然后重启 atom，ctrl+`成功打开。  </p><p><a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632#issuecomment-451720322" target="_blank" rel="noopener">出处</a>在此</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;某次滚动更新以后忽然发现 Atom 的终端不能用了（&lt;a href=&quot;https://github.com/platformio/platformio-atom-ide-terminal&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;platformio-atom-ide-terminal&lt;/a&gt;），到 &lt;a href=&quot;https://github.com/platformio/platformio-atom-ide-terminal/issues/632&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;issues&lt;/a&gt; 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  &lt;/p&gt;
+&lt;figure class=&quot;highlight bash hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;hljs-built_in&quot;&gt;cd&lt;/span&gt; ~/.atom/packages/platformio-ide-terminal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ vim lib/process.coffee&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;将第一行的 &lt;code&gt;pty = require &amp;#39;pty.js&amp;#39;&lt;/code&gt; 改为 &lt;code&gt;pty = require &amp;#39;node-pty-prebuilt&amp;#39;&lt;/code&gt;     &lt;/p&gt;
+&lt;p&gt;​    &lt;/p&gt;
+&lt;figure class=&quot;highlight bash hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ vim package.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加依赖：&lt;code&gt;&amp;quot;node-pty-prebuilt&amp;quot;: &amp;quot;^0.7.6&amp;quot;&lt;/code&gt;      &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="ArchLinux" scheme="https://www.senventise.com/tags/ArchLinux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HP39gII 死机修复</title>
+    <link href="https://www.senventise.com/2019/01/15/HP39gII-%E6%AD%BB%E6%9C%BA%E4%BF%AE%E5%A4%8D/"/>
+    <id>https://www.senventise.com/2019/01/15/HP39gII-死机修复/</id>
+    <published>2019-01-15T11:02:35.000Z</published>
+    <updated>2019-01-20T09:17:26.892Z</updated>
+    
+    <content type="html"><![CDATA[<p>HP39gII 貌似 bug 不少，已经死机了好几次了，而且死机以后未保存的数据会丢失，很烦，前两天在编程玩的时候又一次死机了…<br>而且死机就以后打不开了，卡在 HP logo 的开机界面，百度了一下，貌似只能重刷固件，但是连接工具打不开…    </p><a id="more"></a><p>万幸用万能的谷歌找到了答案：在开机时按住删除键(Hold down the backspace key on boot.)，成功开机。<br><strong> 注意，此举将格式化计算器。 </strong><br><a href="http://www.hpmuseum.org/cgi-sys/cgiwrap/hpmuseum/archv021.cgi?read=240070" target="_blank" rel="noopener">出处</a>  </p><p>附上 39gII 模拟器与连接工具：<a href="ftp://ftp.hp.com/pub/calculators/39gII/" target="_blank" rel="noopener">链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HP39gII 貌似 bug 不少，已经死机了好几次了，而且死机以后未保存的数据会丢失，很烦，前两天在编程玩的时候又一次死机了…&lt;br&gt;而且死机就以后打不开了，卡在 HP logo 的开机界面，百度了一下，貌似只能重刷固件，但是连接工具打不开…    &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习笔记-1</title>
+    <link href="https://www.senventise.com/2018/08/03/ML-01/"/>
+    <id>https://www.senventise.com/2018/08/03/ML-01/</id>
+    <published>2018-08-03T04:13:14.000Z</published>
+    <updated>2019-01-18T05:15:36.378Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="监督学习-Surpervised-learning"><a href="#监督学习-Surpervised-learning" class="headerlink" title="监督学习(Surpervised learning)"></a>监督学习(Surpervised learning)</h2><p>在监督学习中,给定一组数据,我们知道正确的输出结果应该是什么样子,并且知道在输入和输出之间有着一个特定的关系.<br><a id="more"></a></p><h3 id="回归问题-Regression"><a href="#回归问题-Regression" class="headerlink" title="回归问题(Regression)"></a>回归问题(Regression)</h3><p>通常是预测一个值.<br><em>eg.预测某个面积的房屋价格</em>  </p><h3 id="分类问题-Classification"><a href="#分类问题-Classification" class="headerlink" title="分类问题(Classification)"></a>分类问题(Classification)</h3><p>预测一个离散值,试图将输入变量与离散的类别对应起来.<br><em>eg.预测某个大小的肿瘤是良性还是恶性</em><br><strong>有时分类问题可能会有多种输出,可能不止两种.</strong>  </p><h2 id="无监督学习-Unsupervised-learning"><a href="#无监督学习-Unsupervised-learning" class="headerlink" title="无监督学习(Unsupervised learning)"></a>无监督学习(Unsupervised learning)</h2><p>在无监督学习中，我们基本上不知道结果会是什么样子,但我们可以通过聚类的方式从数据中提取一个特殊的结构.在无监督学习中给定的数据是和监督学习中给定的数据是不一样的.在无监督学习中给定的数据没有任何标签.<br><em>eg.Google News 会自动将网上的新闻分类,例如XX油井发生火灾的分类里面的页面都是互联网上关于这场火灾的报道.</em>  </p><h2 id="线性回归模型-Linear-regression"><a href="#线性回归模型-Linear-regression" class="headerlink" title="线性回归模型(Linear regression)"></a>线性回归模型(Linear regression)</h2><p>$$ h_\theta(x)=\theta_0+\theta_1x $$<br>(单变量线性回归)<br><strong> <em>h</em>即为假设(hypothess),是拟合的函数. </strong>   </p><h3 id="代价函数-Cost-function-平方误差函数-Square-error-function"><a href="#代价函数-Cost-function-平方误差函数-Square-error-function" class="headerlink" title="代价函数(Cost function)/平方误差函数(Square error function)"></a>代价函数(Cost function)/平方误差函数(Square error function)</h3><p>$$ J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2 $$   </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;监督学习-Surpervised-learning&quot;&gt;&lt;a href=&quot;#监督学习-Surpervised-learning&quot; class=&quot;headerlink&quot; title=&quot;监督学习(Surpervised learning)&quot;&gt;&lt;/a&gt;监督学习(Surpervised learning)&lt;/h2&gt;&lt;p&gt;在监督学习中,给定一组数据,我们知道正确的输出结果应该是什么样子,并且知道在输入和输出之间有着一个特定的关系.&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="机器学习" scheme="https://www.senventise.com/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记安装 kali 遇到的坑</title>
+    <link href="https://www.senventise.com/2018/07/09/problems-with-kali-linux-installation/"/>
+    <id>https://www.senventise.com/2018/07/09/problems-with-kali-linux-installation/</id>
+    <published>2018-07-09T04:13:14.000Z</published>
+    <updated>2019-01-20T09:17:04.673Z</updated>
+    
+    <content type="html"><![CDATA[<p>emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。   </p><h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p><h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置–&gt;网络适配器–&gt;桥接模式,解决。  </p><a id="more"></a><h3 id="问题3：安装VMware-tools时提示只读文件系统"><a href="#问题3：安装VMware-tools时提示只读文件系统" class="headerlink" title="问题3：安装VMware tools时提示只读文件系统"></a>问题3：安装VMware tools时提示只读文件系统</h3><p>原因：cdrom是只读的，解压时要加上 <code>-C /目录</code> 解压到指定目录。</p><p>总结：善用搜索引擎！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。   &lt;/p&gt;
+&lt;h3 id=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;a href=&quot;#问题1：系统安装时出现错误&quot; class=&quot;headerlink&quot; title=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;/a&gt;问题1：系统安装时出现错误&lt;/h3&gt;&lt;p&gt;这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   &lt;/p&gt;
+&lt;h3 id=&quot;问题2：没有网络连接&quot;&gt;&lt;a href=&quot;#问题2：没有网络连接&quot; class=&quot;headerlink&quot; title=&quot;问题2：没有网络连接&quot;&gt;&lt;/a&gt;问题2：没有网络连接&lt;/h3&gt;&lt;p&gt;编辑虚拟机设置–&amp;gt;网络适配器–&amp;gt;桥接模式,解决。  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="网络安全" scheme="https://www.senventise.com/tags/CyberSecurity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈泛型</title>
+    <link href="https://www.senventise.com/2018/06/01/2018-6-1-talking-about-the-generic/"/>
+    <id>https://www.senventise.com/2018/06/01/2018-6-1-talking-about-the-generic/</id>
+    <published>2018-06-01T04:13:14.000Z</published>
+    <updated>2019-01-20T09:16:48.699Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是泛型？"><a href="#什么是泛型？" class="headerlink" title="什么是泛型？"></a>什么是泛型？</h2><blockquote><p>&emsp;&emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。<br><strong>参数不可以是原始数据类型</strong>  </p></blockquote><a id="more"></a><p>例如:</p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gen</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> T ob; <span class="hljs-comment">//定义泛型成员变量</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Gen</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getOb</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOb</span><span class="hljs-params">(T ob)</span></span>&#123;</span><br><span class="line">         <span class="hljs-keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showType</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">//定义泛型类Gen的一个Integer版本</span></span><br><span class="line">        Gen&lt;Integer&gt; intOb = <span class="hljs-keyword">new</span> Gen&lt;Integer&gt;(<span class="hljs-number">88</span>);</span><br><span class="line">    intOb.showType();</span><br><span class="line">    <span class="hljs-keyword">int</span> i = intOb.getOb();</span><br><span class="line">    System.out.println(<span class="hljs-string">"value= "</span> + i);</span><br><span class="line">    System.out.println(<span class="hljs-string">"----------------------------------"</span>);</span><br><span class="line">    <span class="hljs-comment">//定义泛型类Gen的一个String版本</span></span><br><span class="line">    Gen&lt;String&gt; strOb = <span class="hljs-keyword">new</span> Gen&lt;String&gt;(<span class="hljs-string">"Hello Gen!"</span>);</span><br><span class="line">    strOb.showType();</span><br><span class="line">    String s = strOb.getOb();</span><br><span class="line">    System.out.println(<span class="hljs-string">"value= "</span> + s);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><blockquote><p>泛型类型用于类的定义中，被称为泛型类。通过泛型可以完成对一组类的操作对外开放相同的接口。最典型的就是各种容器类，如：List、Set、Map。</p></blockquote><p>e.g.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//此处T可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型</span></span><br><span class="line"><span class="hljs-comment">//在实例化泛型类时，必须指定T的具体类型</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Generic</span>&lt;<span class="hljs-title">T</span>&gt;</span>&#123;</span><br><span class="line"><span class="hljs-comment">//key这个成员变量的类型为T,T的类型由外部指定</span></span><br><span class="line">    <span class="hljs-keyword">private</span> T key;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Generic</span><span class="hljs-params">(T key)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">//泛型构造方法形参key的类型也为T，T的类型由外部指定</span></span><br><span class="line">        <span class="hljs-keyword">this</span>.key = key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getKey</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//泛型方法getKey的返回值类型为T，T的类型由外部指定</span></span><br><span class="line">        <span class="hljs-keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h2><p>泛型方法，是在调用方法的时候指明泛型的具体类型。<br>e.g.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//定义泛型方法</span></span><br><span class="line"><span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getObject</span><span class="hljs-params">(Class&lt;T&gt; c)</span></span>&#123;</span><br><span class="line">    T t = c.newInstance();</span><br><span class="line">    <span class="hljs-keyword">return</span> t;</span><br><span class="line"></span><br><span class="line">Generic generic = <span class="hljs-keyword">new</span> Generic();</span><br><span class="line"><span class="hljs-comment">//调用泛型方法</span></span><br><span class="line">Object obj=generic.getObject(Class.forName(<span class="hljs-string">"com.test.test"</span>))</span><br></pre></td></tr></table></figure></p><p>  &emsp;&emsp;说明一下，定义泛型方法时，必须在返回值前边加一个<t>，来声明这是一个泛型方法，持有一个泛型T，然后才可以用泛型T作为方法的返回值.</t></p><p>  &emsp;&emsp;Class<t>的作用就是指明泛型的具体类型，而Class<t>类型的变量c，可以用来创建泛型类的对象。  </t></t></p><p>  &emsp;&emsp;为什么要用变量c来创建对象呢？既然是泛型方法，就代表着我们不知道具体的类型是什么，也不知道构造方法如何，因此没有办法去new一个对象，但可以利用变量c的newInstance方法去创建对象，也就是利用反射创建对象。  </p><p>  &emsp;&emsp;泛型方法要求的参数是Class<t>类型，而Class.forName()方法的返回值也是Class<t>，因此可以用Class.forName()作为参数。其中，forName()方法中的参数是何种类型，返回的Class<t>就是何种类型。在本例中，forName()方法中传入的是User类的完整路径，因此返回的是Class<user>类型的对象，因此调用泛型方法时，变量c的类型就是Class<user>，因此泛型方法中的泛型T就被指明为User，因此变量obj的类型为User。  </user></user></t></t></t></p><p>  &emsp;&emsp;当然，泛型方法不是仅仅可以有一个参数Class<t>，可以根据需要添加其他参数。  </t></p><p>  &emsp;&emsp;为什么要使用泛型方法呢？因为泛型类要在实例化的时候就指明类型，如果想换一种类型，不得不重新new一次，可能不够灵活；而泛型方法可以在调用的时候指明类型，更加灵活。  </p><p><strong>文中部分内容<a href="http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">出处</a></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是泛型？&quot;&gt;&lt;a href=&quot;#什么是泛型？&quot; class=&quot;headerlink&quot; title=&quot;什么是泛型？&quot;&gt;&lt;/a&gt;什么是泛型？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。&lt;br&gt;&lt;strong&gt;参数不可以是原始数据类型&lt;/strong&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="Java" scheme="https://www.senventise.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇博客！</title>
+    <link href="https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/"/>
+    <id>https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/</id>
+    <published>2018-05-28T04:13:14.000Z</published>
+    <updated>2019-01-20T09:16:35.329Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="My-first-blog-here"><a href="#My-first-blog-here" class="headerlink" title="My first blog here!"></a>My first blog here!</h1><p>Written by vim on termux,without Chinese input method support.</p><blockquote><p>5/27/2018 21:58</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      纪念第一篇博客
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.senventise.com/categories/life/"/>
+    
+    
+  </entry>
+  
+</feed>

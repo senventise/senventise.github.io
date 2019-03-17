@@ -16,13 +16,15 @@
 <meta property="og:description" content="关于作者目前是一名普通高二学生。   初二电脑被没收，百无聊赖中接触到了 Minecraft pe，开始自己编 js 脚本，第一次接触到了编程，一下子就被吸引了，之后又入了 AIDE 的坑，开始学习 Android 开发和 Java。   初三毕业的暑假学了 Python，自己写的第一个脚本是一个爬虫（爬的是**领域 #滑稽）   高一寒假（2018.1），自己试着装 ArchLinux（第一次就">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006F5KXFgy1fzarw5n50fj31hc0u0e82.jpg">
-<meta property="og:updated_time" content="2019-01-18T07:59:23.787Z">
+<meta property="og:updated_time" content="2019-03-15T13:06:02.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="关于作者目前是一名普通高二学生。   初二电脑被没收，百无聊赖中接触到了 Minecraft pe，开始自己编 js 脚本，第一次接触到了编程，一下子就被吸引了，之后又入了 AIDE 的坑，开始学习 Android 开发和 Java。   初三毕业的暑假学了 Python，自己写的第一个脚本是一个爬虫（爬的是**领域 #滑稽）   高一寒假（2018.1），自己试着装 ArchLinux（第一次就">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006F5KXFgy1fzarw5n50fj31hc0u0e82.jpg">
 
 
+
+<link rel="alternative" href="/atom.xml" title="关于" type="application/atom+xml">
 
 
 
@@ -86,6 +88,8 @@ var _hmt = _hmt || [];
 
 <link rel="stylesheet" href="/css/style.css">
 
+<link rel="stylesheet" type="text/css" href="/css/table_fix.css">
+
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
@@ -93,7 +97,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="关于" height="28">
+                Senventise&#39;s Blog
             
             </a>
         </div>
@@ -102,8 +106,6 @@ var _hmt = _hmt || [];
             <div class="navbar-start">
                 
                 <a class="navbar-item" href="/">Home</a>
-                
-                <a class="navbar-item" href="/archives">Archives</a>
                 
                 <a class="navbar-item" href="/categories">Categories</a>
                 
@@ -150,7 +152,7 @@ var _hmt = _hmt || [];
 <p>高二寒假（现在），正在学习 Rust 和 Haskell。</p>
 <h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>使用<a href="https://hexo.io" target="_blank" rel="noopener">hexo</a>搭建，主题是<a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>,图片使用了微博图床，部分大文件放在<a href="https://cloud.tencent.com/document/product/436" target="_blank" rel="noopener">腾讯云对象存储</a>上，托管于<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.  </p>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>邮箱: <a href="mailto:senventise@gmail.com" target="_blank" rel="noopener">senventise@gmail.com</a>  </p>
-<p>QQ: 2375741859</p>
+<p>QQ: MjM3NTc0MTg1OQ==</p>
 
         </div>
         
@@ -294,7 +296,7 @@ var _hmt = _hmt || [];
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
                 
                 <i data-feather="rss"></i>
                 
@@ -793,7 +795,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="关于" height="512">
+                    Senventise&#39;s Blog
                 
                 </a>
                 <p id="baidu"></p>
@@ -808,13 +810,9 @@ var _hmt = _hmt || [];
         </div>
     </div>
     <script>
-      feather.replace() //feather icons
-      if (document.domain == "fast.senventise.com"){
-          document.getElementById("baidu").innerHTML = "本页面专为百度作了部分优化，并托管于 Coding Pages。<a href=\"https://senventise.com\">主站在此。</a>"
-          var s=document.createElement("script");
-          s.src="/js/baidu_push.js";
-          document.body.appendChild(s);
-      }
+        //滚动
+        document.body.innerHTML=document.body.innerHTML.replace("<!--ScrollStart-->","<div style=\"overflow:auto\">").replace("<!--ScrollEnd-->","</div>");
+        feather.replace(); //feather icons
     </script>
 </footer>
 

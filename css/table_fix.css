@@ -1,0 +1,19 @@
+/*
+修复移动端表格的问题
+*/
+/*
+td{
+    white-space: nowrap;
+}
+
+
+table{
+    width: 100%;
+    color: #ff0000;
+    overflow: scroll;
+}
+*/
+
+td{
+    white-space:nowrap;/* 不换行 */
+}

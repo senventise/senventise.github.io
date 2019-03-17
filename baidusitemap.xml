@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.senventise.com/about/index.html</loc>
+    <lastmod>2019-03-15</lastmod>
+  </url>  <url>
     <loc>https://www.senventise.com/2019/03/10/%E6%96%B0%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AAGalgame%E8%AE%B0%E5%BD%95%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2019-03-10</lastmod>
   </url>  <url>
@@ -21,9 +24,6 @@
   </url>  <url>
     <loc>https://www.senventise.com/2019/01/19/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8B%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80atom%E7%BB%88%E7%AB%AF%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-01-19</lastmod>
-  </url>  <url>
-    <loc>https://www.senventise.com/about/index.html</loc>
-    <lastmod>2019-01-18</lastmod>
   </url>  <url>
     <loc>https://www.senventise.com/2018/08/03/ML-01/</loc>
     <lastmod>2019-01-18</lastmod>

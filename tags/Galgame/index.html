@@ -18,6 +18,8 @@
 
 
 
+<link rel="alternative" href="/atom.xml" title="Senventise&#39;s Blog" type="application/atom+xml">
+
 
 
 <link rel="icon" href="/images/favicon.png">
@@ -80,6 +82,8 @@ var _hmt = _hmt || [];
 
 <link rel="stylesheet" href="/css/style.css">
 
+<link rel="stylesheet" type="text/css" href="/css/table_fix.css">
+
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
@@ -87,7 +91,7 @@ var _hmt = _hmt || [];
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Blog" height="28">
+                Senventise&#39;s Blog
             
             </a>
         </div>
@@ -96,8 +100,6 @@ var _hmt = _hmt || [];
             <div class="navbar-start">
                 
                 <a class="navbar-item" href="/">Home</a>
-                
-                <a class="navbar-item" href="/archives">Archives</a>
                 
                 <a class="navbar-item" href="/categories">Categories</a>
                 
@@ -265,7 +267,7 @@ var _hmt = _hmt || [];
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
                 
                 <i data-feather="rss"></i>
                 
@@ -764,7 +766,7 @@ var _hmt = _hmt || [];
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/logo.png" alt="Senventise&#39;s Blog" height="512">
+                    Senventise&#39;s Blog
                 
                 </a>
                 <p id="baidu"></p>
@@ -779,13 +781,9 @@ var _hmt = _hmt || [];
         </div>
     </div>
     <script>
-      feather.replace() //feather icons
-      if (document.domain == "fast.senventise.com"){
-          document.getElementById("baidu").innerHTML = "本页面专为百度作了部分优化，并托管于 Coding Pages。<a href=\"https://senventise.com\">主站在此。</a>"
-          var s=document.createElement("script");
-          s.src="/js/baidu_push.js";
-          document.body.appendChild(s);
-      }
+        //滚动
+        document.body.innerHTML=document.body.innerHTML.replace("<!--ScrollStart-->","<div style=\"overflow:auto\">").replace("<!--ScrollEnd-->","</div>");
+        feather.replace(); //feather icons
     </script>
 </footer>
 
