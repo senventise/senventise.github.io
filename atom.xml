@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.senventise.com/"/>
-  <updated>2019-03-30T12:31:22.247Z</updated>
+  <updated>2019-04-19T12:57:18.275Z</updated>
   <id>https://www.senventise.com/</id>
   
   <author>
@@ -17,24 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>galgame补全计划</title>
-    <link href="https://www.senventise.com/2019/03/22/galgame%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/"/>
-    <id>https://www.senventise.com/2019/03/22/galgame补全计划/</id>
-    <published>2019-03-22T13:11:11.000Z</published>
-    <updated>2019-03-30T12:31:22.247Z</updated>
+    <title>“傲慢与偏见”</title>
+    <link href="https://www.senventise.com/2019/04/19/%E2%80%9C%E5%82%B2%E6%85%A2%E4%B8%8E%E5%81%8F%E8%A7%81%E2%80%9D/"/>
+    <id>https://www.senventise.com/2019/04/19/“傲慢与偏见”/</id>
+    <published>2019-04-19T11:29:09.000Z</published>
+    <updated>2019-04-19T12:57:18.275Z</updated>
     
-    <content type="html"><![CDATA[<p>最近推完了一些 galgame,颇有感触,就想着写下来,也算是给以后留个回忆.然而写得磕磕绊绊,句子也乱七八糟,这才发现已经退步得不成样子了<a id="more"></a><br>于是这个”Galgame补全计划”诞生了,就是把我推过的 Galgame 整理一遍,把当时的感想写下来,权当练笔了.</p><p>btw,fcitx自带的小鹤双拼好难受,完全比不了手机上的Google拼音输入法啊…</p>]]></content>
+    <content type="html"><![CDATA[<p>​    前几天和同学聊天，顺口安利了一波最近在推的gal，然后某人就一脸震惊地看着我：“你怎么老玩这种游戏，怪不得这么虚。”  </p><a id="more"></a><p>​    其实这种话我也不是第一次听了，每次聊到galgame总是会有人莫名高潮，就像听到了什么不得了的东西似的。然而诡异的是这其中有不少人问我要过各种资源：父爱如山、母爱如水、夜勤病栋、日在校园等等，其中不乏各种重口的av或是里番，但是一听到galgame就像见了鬼一样，这情形让我在感到可笑之余又感到有点可悲。</p><p>​    说实话，在我接触galgame以前对这个领域的印象只有电车之狼、奴隶少女希尔薇、nekopara这些，不过倒是没什么恶感（可能是我比较变态的原因???）</p><p>​    入坑了以后才知道了gal的世界是如此广阔，就我个人而言我是比较喜欢纯爱的（<strong>永远不接受牛头人！</strong>），也不会把像以前那样认为把galgame和色情划等号了，其实很多gal都是剧情向的，论实用程度甚至比不上里番，但是很多人莫名其妙地就给galgame打上了“变态/色情”的标签，还固执己见，拒绝更新自己的观念，很多人抱怨自和己的父母有代沟、抱怨父母的固执，可他们实际上也继承着上一代的固执，死守着脑中的刻板印象，不肯退让。  </p><p>​    最后就放一张正在推的游戏截图吧<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g272mkh9c8j30qo0f0753.jpg" alt="青鸟"></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;最近推完了一些 galgame,颇有感触,就想着写下来,也算是给以后留个回忆.然而写得磕磕绊绊,句子也乱七八糟,这才发现已经退步得不成样子了&lt;/p&gt;
+      &lt;p&gt;​    前几天和同学聊天，顺口安利了一波最近在推的gal，然后某人就一脸震惊地看着我：“你怎么老玩这种游戏，怪不得这么虚。”  &lt;/p&gt;
     
     </summary>
     
-      <category term="杂谈" scheme="https://www.senventise.com/categories/others/"/>
+      <category term="Galgame" scheme="https://www.senventise.com/categories/Galgame/"/>
     
     
-      <category term="Galgame" scheme="https://www.senventise.com/tags/Galgame/"/>
+      <category term="杂谈" scheme="https://www.senventise.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
@@ -158,13 +158,13 @@
     <link href="https://www.senventise.com/2018/07/09/problems-with-kali-linux-installation/"/>
     <id>https://www.senventise.com/2018/07/09/problems-with-kali-linux-installation/</id>
     <published>2018-07-09T04:13:14.000Z</published>
-    <updated>2019-01-20T09:17:04.673Z</updated>
+    <updated>2019-04-19T12:55:57.116Z</updated>
     
-    <content type="html"><![CDATA[<p>emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。   </p><h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p><h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置–&gt;网络适配器–&gt;桥接模式,解决。  </p><a id="more"></a><h3 id="问题3：安装VMware-tools时提示只读文件系统"><a href="#问题3：安装VMware-tools时提示只读文件系统" class="headerlink" title="问题3：安装VMware tools时提示只读文件系统"></a>问题3：安装VMware tools时提示只读文件系统</h3><p>原因：cdrom是只读的，解压时要加上 <code>-C /目录</code> 解压到指定目录。</p><p>总结：善用搜索引擎！</p>]]></content>
+    <content type="html"><![CDATA[<p>emmmm今天在尝试安装kali时遇到了一些问题，遂记之。   </p><h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p><h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置–&gt;网络适配器–&gt;桥接模式,解决。  </p><a id="more"></a><h3 id="问题3：安装VMware-tools时提示只读文件系统"><a href="#问题3：安装VMware-tools时提示只读文件系统" class="headerlink" title="问题3：安装VMware tools时提示只读文件系统"></a>问题3：安装VMware tools时提示只读文件系统</h3><p>原因：cdrom是只读的，解压时要加上 <code>-C /目录</code> 解压到指定目录。</p><p>总结：善用搜索引擎！</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;emmmm因为一些机缘巧合进入了交通大学网络空间安全工作站，既来之则安之，今天在安装kali时遇到了一些问题，遂记之。   &lt;/p&gt;
+      &lt;p&gt;emmmm今天在尝试安装kali时遇到了一些问题，遂记之。   &lt;/p&gt;
 &lt;h3 id=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;a href=&quot;#问题1：系统安装时出现错误&quot; class=&quot;headerlink&quot; title=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;/a&gt;问题1：系统安装时出现错误&lt;/h3&gt;&lt;p&gt;这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   &lt;/p&gt;
 &lt;h3 id=&quot;问题2：没有网络连接&quot;&gt;&lt;a href=&quot;#问题2：没有网络连接&quot; class=&quot;headerlink&quot; title=&quot;问题2：没有网络连接&quot;&gt;&lt;/a&gt;问题2：没有网络连接&lt;/h3&gt;&lt;p&gt;编辑虚拟机设置–&amp;gt;网络适配器–&amp;gt;桥接模式,解决。  &lt;/p&gt;
     
@@ -182,9 +182,9 @@
     <link href="https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/"/>
     <id>https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/</id>
     <published>2018-05-28T04:13:14.000Z</published>
-    <updated>2019-01-20T09:16:35.329Z</updated>
+    <updated>2019-04-19T12:55:34.526Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="My-first-blog-here"><a href="#My-first-blog-here" class="headerlink" title="My first blog here!"></a>My first blog here!</h1><p>Written by vim on termux,without Chinese input method support.</p><blockquote><p>5/27/2018 21:58</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="My-first-blog-here"><a href="#My-first-blog-here" class="headerlink" title="My first blog here!"></a>My first blog here!</h1><p>Written by vim on termux,without Chinese input method.</p><blockquote><p>5/27/2018 21:58</p></blockquote>]]></content>
     
     <summary type="html">
     
