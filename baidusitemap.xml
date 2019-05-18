@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.senventise.com/about/index.html</loc>
+    <lastmod>2019-05-18</lastmod>
+  </url>  <url>
     <loc>https://www.senventise.com/2019/04/19/%E9%9D%92%E9%B8%9F/</loc>
     <lastmod>2019-05-18</lastmod>
   </url>  <url>
@@ -12,9 +15,6 @@
   </url>  <url>
     <loc>https://www.senventise.com/2018/05/28/2018-5-28-My-first-blog/</loc>
     <lastmod>2019-04-19</lastmod>
-  </url>  <url>
-    <loc>https://www.senventise.com/about/index.html</loc>
-    <lastmod>2019-03-15</lastmod>
   </url>  <url>
     <loc>https://www.senventise.com/2019/03/10/%E6%96%B0%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AAGalgame%E8%AE%B0%E5%BD%95%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2019-03-10</lastmod>
