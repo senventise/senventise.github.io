@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 <p>高一暑假，进入了上海交通大学网络空间安全实践工作站学习网络安全，受益匪浅，也对网络安全产生了浓厚的兴趣。  </p>
 <p>高二寒假（现在），正在学习 Rust 和 Haskell。</p>
 <h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>使用<a href="https://hexo.io" target="_blank" rel="noopener">hexo</a>搭建，主题是<a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>,图片使用了微博图床，部分大文件放在<a href="https://cloud.tencent.com/document/product/436" target="_blank" rel="noopener">腾讯云对象存储</a>上，托管于<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.  </p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>邮箱: senventise@gmail.com  </p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>邮箱: <a href="mailto:senventise@gmail.com" target="_blank" rel="noopener">senventise@gmail.com</a>  </p>
 <p>QQ: MjM3NTc0MTg1OQ==</p>
 
         </div>
@@ -202,19 +202,18 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-    var gitalk = new Gitalk({
-        clientID: 'f0d745d0bf6b7018d673',
-        clientSecret: '3f66235aacc950baeafebb7291ee8412e2cf668b',
-        id: 'a7224db13f3a49096aa27c1876d1a947',
-        repo: 'senventise.github.io',
-        owner: 'senventise',
-        admin: ["senventise"]
-    })
-    gitalk.render('comment-container')
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'POuybqktN72xcSvkAOiM0Lrd-gzGzoHsz',
+        app_key: '9wJYI14I50W0SYXjMYh1FgnG',
+        placeholder: 'Leancloud云引擎可能正在休眠中，发送失败请重试 (๑•̀ㅂ•́)و✧'
+    });
 </script>
 
     </div>
@@ -797,17 +796,13 @@ var _hmt = _hmt || [];
                 &copy; 2019 Senventise&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
+                <br>如无特殊注明，本站作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
             </div>
             <div class="level-end">
             
             </div>
         </div>
     </div>
-    <script>
-        //滚动
-        //document.body.innerHTML=document.body.innerHTML.replace("<!--ScrollStart-->","<div style=\"overflow:auto\">").replace("<!--ScrollEnd-->","</div>"); 这方法太蠢了,弃了
-        feather.replace(); //feather icons
-    </script>
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>

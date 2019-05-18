@@ -162,29 +162,29 @@ var _hmt = _hmt || [];
         <div class="content">
             <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
 <p>输出如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p>
 <ol>
 <li><p>进入 livecd </p>
 </li>
 <li><p>挂载相应分区：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>chroot:</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新系统：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>退出 chroot：</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新 grub 配置：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p> ​    </p>
 </li>
 </ol>
@@ -268,19 +268,18 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-    var gitalk = new Gitalk({
-        clientID: 'f0d745d0bf6b7018d673',
-        clientSecret: '3f66235aacc950baeafebb7291ee8412e2cf668b',
-        id: 'e03815a6a3889d45bcc855334fdd8cf5',
-        repo: 'senventise.github.io',
-        owner: 'senventise',
-        admin: ["senventise"]
-    })
-    gitalk.render('comment-container')
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'POuybqktN72xcSvkAOiM0Lrd-gzGzoHsz',
+        app_key: '9wJYI14I50W0SYXjMYh1FgnG',
+        placeholder: 'Leancloud云引擎可能正在休眠中，发送失败请重试 (๑•̀ㅂ•́)و✧'
+    });
 </script>
 
     </div>
@@ -864,17 +863,13 @@ var _hmt = _hmt || [];
                 &copy; 2019 Senventise&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
+                <br>如无特殊注明，本站作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
             </div>
             <div class="level-end">
             
             </div>
         </div>
     </div>
-    <script>
-        //滚动
-        //document.body.innerHTML=document.body.innerHTML.replace("<!--ScrollStart-->","<div style=\"overflow:auto\">").replace("<!--ScrollEnd-->","</div>"); 这方法太蠢了,弃了
-        feather.replace(); //feather icons
-    </script>
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
