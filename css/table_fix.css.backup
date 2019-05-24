@@ -11,5 +11,5 @@ td{
 
 #logo{
     font-family: 'satisfy';
-    font-size: 26px;
+    font-size: 28px;
 }
