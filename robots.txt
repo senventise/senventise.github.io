@@ -1,9 +1,8 @@
-# hexo robots.txt
 User-agent: *
 Allow: /
 Allow: /archives/
 
 Disallow: /images/
 
-Sitemap: https://senventise.com/sitemap.xml
-Sitemap: https://senventise.com/baidusitemap.xml
+Sitemap: https://www.senventise.com/sitemap.xml
+Sitemap: https://www.senventise.com/baidusitemap.xml
