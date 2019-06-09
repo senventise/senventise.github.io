@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /archives/
-
-Disallow: /images/
-
-Sitemap: https://www.senventise.com/sitemap.xml
-Sitemap: https://www.senventise.com/baidusitemap.xml
