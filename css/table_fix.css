@@ -1,0 +1,15 @@
+td{
+    white-space:nowrap;/* 不换行 */
+}
+
+@font-face {
+    font-family: josefin;
+    font-style: normal;
+    font-weight: 400;
+    src: local('satisfy'), local('satisfy'), url(/font/josefin.woff2) format('woff')
+}
+
+#logo{
+    font-family: 'josefin';
+    font-size: 26px;
+}

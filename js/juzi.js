@@ -15,7 +15,9 @@ function juzi()
 			if(j.source!=""){
 				h = h + "&nbsp;&nbsp;&nbsp;---" + j.source;
 			}
-			document.getElementById("juzi").innerHTML=h;
+			if(document.getElementById("juzi")!=null){
+				document.getElementById("juzi").innerHTML=h;
+			}
 		}
 	}
 	xmlhttp.open("GET","https://service-2crsqjrb-1256129046.ap-shanghai.apigateway.myqcloud.com/release/juzi",true);
