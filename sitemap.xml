@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.senventise.com/2019/06/09/%E5%86%99%E4%BA%86%E4%B8%AA%E5%8F%A5%E5%AD%90api/</loc>
+    <loc>https://www.senventise.com/about/index.html</loc>
     
-    <lastmod>2019-06-09T08:46:33.766Z</lastmod>
+    <lastmod>2019-06-09T11:13:41.093Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.senventise.com/about/index.html</loc>
+    <loc>https://www.senventise.com/friends/index.html</loc>
     
-    <lastmod>2019-06-02T01:49:01.440Z</lastmod>
+    <lastmod>2019-06-09T11:11:27.757Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.senventise.com/categories/index.html</loc>
+    
+    <lastmod>2019-06-09T09:29:54.038Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.senventise.com/tags/index.html</loc>
+    
+    <lastmod>2019-06-09T09:29:38.952Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.senventise.com/2019/06/09/%E5%86%99%E4%BA%86%E4%B8%AA%E5%8F%A5%E5%AD%90api/</loc>
+    
+    <lastmod>2019-06-09T08:46:33.766Z</lastmod>
     
   </url>
   

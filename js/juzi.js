@@ -11,7 +11,11 @@ function juzi()
 		{
 			j = JSON.parse(xmlhttp.responseText);
 			j= JSON.parse(j);
-			document.getElementById("juzi").innerHTML=j.sentense;
+			h = j.sentense;
+			if(j.source!=""){
+				h = h + "&nbsp;&nbsp;&nbsp;---" + j.source;
+			}
+			document.getElementById("juzi").innerHTML=h;
 		}
 	}
 	xmlhttp.open("GET","https://service-2crsqjrb-1256129046.ap-shanghai.apigateway.myqcloud.com/release/juzi",true);
