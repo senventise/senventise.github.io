@@ -1,4 +1,4 @@
-function loadXMLDoc()
+function juzi()
 {
 	var xmlhttp;
 	if (window.XMLHttpRequest)

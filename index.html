@@ -135,6 +135,67 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 500 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/09/写了个句子api/">给blog加了个句子api</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="灵感来源"><a href="#灵感来源" class="headerlink" title="灵感来源"></a>灵感来源</h2><p>经常会看到一些不错的句子，每次都是扔到 Onenote 里面就完事了，最近心血来潮，就花了半个小时写了一个api</p>
+<h2 id="构思"><a href="#构思" class="headerlink" title="构思"></a>构思</h2><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>用的是腾讯云的<a href="https://cloud.tencent.com/document/product/583" target="_blank" rel="noopener">无服务器云函数</a>,虽然在阿里云有个闲置的服务器，但是没有备案，很久以前就看到过腾讯云的无服务器云函数，感觉不错，但是一直没机会用。</p>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p>js里面用ajax更新下就完事了。</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="1-整理句子"><a href="#1-整理句子" class="headerlink" title="1.整理句子"></a>1.整理句子</h3><p>我把句子塞到了一个json里面，然后把这个文件上传到了<a href="https://cloud.tencent.com/document/product/436" target="_blank" rel="noopener">腾讯云COS</a>里，文件格式大致如下</p>
+<figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="hljs-attr">"我们可以卑微如尘土，但不可扭曲如蛆虫。"</span>: <span class="hljs-string">"季业"</span>,</span><br><span class="line">	<span class="hljs-attr">"如果说，有上帝的话。人类一思考，上帝就发笑，如果人类不思考，上帝连发笑都不屑于。"</span>: <span class="hljs-string">"严锋"</span>,</span><br><span class="line">	<span class="hljs-attr">"前进！前进！不择手段的前进！"</span>: <span class="hljs-string">"《三体》"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>左边是句子，右边是来源。</p>
+<h3 id="2-部署云函数"><a href="#2-部署云函数" class="headerlink" title="2.部署云函数"></a>2.部署云函数</h3><p>云函数使用 Python3.6 ，具体代码如下</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> json</span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"><span class="hljs-keyword">import</span> requests <span class="hljs-keyword">as</span> rq</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main_handler</span><span class="hljs-params">(event, context)</span>:</span></span><br><span class="line">    s = json.loads(rq.get(<span class="hljs-string">"https://example.myqcloud.com/sentense.json"</span>).text)</span><br><span class="line">    s_l = []</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s:</span><br><span class="line">        s_l.append(i)</span><br><span class="line">    rand = random.randint(<span class="hljs-number">0</span>,len(s_l)<span class="hljs-number">-1</span>)</span><br><span class="line">    data = &#123;<span class="hljs-string">"sentense"</span>:s_l[rand],<span class="hljs-string">"source"</span>:s[s_l[rand]]&#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> json.dumps(data)</span><br></pre></td></tr></table></figure>
+<p>反正性能需求也不高，随便写了一个。</p>
+<p>触发方式选择<code>Api网关</code>，然后到<a href="https://console.cloud.tencent.com/apigateway" target="_blank" rel="noopener">Api网关</a>里设置允许跨域访问，<em>跨域访问好像只能用在生产环境中，所以记得发布</em>。</p>
+<h3 id="3-前端相关"><a href="#3-前端相关" class="headerlink" title="3.前端相关"></a>3.前端相关</h3><p>随便写了个js，具体代码如下</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">juzi</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> xmlhttp;</span><br><span class="line">	<span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.XMLHttpRequest)</span><br><span class="line">	&#123;</span><br><span class="line">		xmlhttp=<span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.onreadystatechange=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function">	</span>&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span> (xmlhttp.readyState==<span class="hljs-number">4</span> &amp;&amp; xmlhttp.status==<span class="hljs-number">200</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			j = <span class="hljs-built_in">JSON</span>.parse(xmlhttp.responseText);</span><br><span class="line">			j= <span class="hljs-built_in">JSON</span>.parse(j);</span><br><span class="line">			<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"juzi"</span>).innerHTML=j.sentense;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"https://example.myqcloud.com/release/juzi"</span>,<span class="hljs-literal">true</span>);</span><br><span class="line">	xmlhttp.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-19T13:24:23.000Z">2019-04-19</time>
                 
                 <div class="level-item">
@@ -694,7 +755,7 @@ var _hmt = _hmt || [];
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -714,7 +775,7 @@ var _hmt = _hmt || [];
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -806,7 +867,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/others/">
@@ -836,7 +897,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArchLinux/" style="font-size: 15px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 20px;">Galgame</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 15px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 20px;">Galgame</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/machine-learning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -850,6 +911,19 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -903,19 +977,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
-                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -927,6 +988,17 @@ var _hmt = _hmt || [];
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
@@ -1018,6 +1090,13 @@ var _hmt = _hmt || [];
                     <a class="tags has-addons" href="/tags/Galgame/">
                         <span class="tag">Galgame</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1062,6 +1141,19 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-19T13:24:23.000Z">2019-04-19</time></div>
                     <a href="/2019/04/19/青鸟/" class="has-link-black-ter is-size-6">青鸟 - 玛丽线</a>
                     <p class="is-size-7 is-uppercase">
@@ -1110,19 +1202,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T04:09:25.000Z">2019-01-19</time></div>
-                    <a href="/2019/01/19/解决archlinux下无法打开atom终端问题/" class="has-link-black-ter is-size-6">解决archlinux下无法打开atom终端的问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1134,6 +1213,17 @@ var _hmt = _hmt || [];
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
@@ -1225,6 +1315,13 @@ var _hmt = _hmt || [];
                     <a class="tags has-addons" href="/tags/Galgame/">
                         <span class="tag">Galgame</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1272,7 +1369,7 @@ var _hmt = _hmt || [];
             </div>
         </div>
         <script>
-			loadXMLDoc()
+			juzi()
             feather.replace(); //feather icons
         </script>
     </div>
