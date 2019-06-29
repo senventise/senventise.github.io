@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.senventise.com/"/>
-  <updated>2019-06-09T08:46:33.766Z</updated>
+  <updated>2019-06-29T04:22:51.071Z</updated>
   <id>https://www.senventise.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Steam下载提示清单不可用</title>
+    <link href="https://www.senventise.com/2019/06/29/Steam%E4%B8%8B%E8%BD%BD%E6%8F%90%E7%A4%BA%E6%B8%85%E5%8D%95%E4%B8%8D%E5%8F%AF%E7%94%A8/"/>
+    <id>https://www.senventise.com/2019/06/29/Steam下载提示清单不可用/</id>
+    <published>2019-06-29T04:12:57.000Z</published>
+    <updated>2019-06-29T04:22:51.071Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没有，提示“清单不可用”。<br><a id="more"></a> </p><p>正当我绝望的时候忽然福至心灵，想起来之前没事干在家目录用ncdu清理了下空间，当时好像在Steam文件夹删了些东西…  </p><p>于是我干脆<code>rm -rf ~/.local/share/Steam</code>，然后再重新打开Steam，提示需要安装，安装完再下载就不再报错了，顺利解决。  </p><p>这件事告诉我们不要瞎几把删东西，就算目录叫<code>cache</code>也不能瞎几把删，血的教训啊…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没有，提示“清单不可用”。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="游戏" scheme="https://www.senventise.com/tags/Games/"/>
+    
+      <category term="Steam" scheme="https://www.senventise.com/tags/Steam/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是谁</title>
+    <link href="https://www.senventise.com/2019/06/27/%E6%88%91%E6%98%AF%E8%B0%81/"/>
+    <id>https://www.senventise.com/2019/06/27/我是谁/</id>
+    <published>2019-06-27T11:24:09.000Z</published>
+    <updated>2019-06-29T04:23:10.575Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天在看网飞的《副本》（其实我更喜欢“碳变”这个译名），妹妹出场来救主角时我还有点感动，想象着兄妹重逢后的温馨画面，然后猝不及防就被喂了口屎…<br><a id="more"></a></p><p>看的时候我不禁陷入沉思：什么才能代表一个人？外表？记忆？还是思想？剧中的蕾虽然外表和以前一样，也保有以前记忆，但她显然不再是男主认识的那个妹妹了，前几天刚看过电影《攻壳机动队》，里面有句话让我印象挺深刻的：“定义你的从来不是记忆和情感，而是你的行为。”想来确实如此。  </p><p>但我认为记忆也是很重要的一个要素。有个同学问过我一个问题：“如果你成为侵华战争中的一个日本士兵，你会去慰安所吗？”  </p><p>当时我是这么回答的：“我不知道，因为那个我已经不再是“我”了，所以我无法确定他的行动，我是不会去的。”  </p><p>他可能会觉得我是在装清高，但我真的是这样想的，因为他所说的那个我有着不同的成长环境，不同的家庭背景，不同的人生经历，那已经不是我了，只是一个冠以我名字的陌生人罢了。  </p><p>顺便再聊下我对于大保健的看法。之前和几个同学聊过这个话题，我个人是无法接受的，一是卫生问题，二是心理洁癖，总觉得心里有点疙瘩，和一个陌生人上床仅仅是为了解决生理问题，我觉得还不如手冲呢，安全、卫生、快捷。想想我表面上天天开车，好像很开放的样子，内心倒是意外地保守…  </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在看网飞的《副本》（其实我更喜欢“碳变”这个译名），妹妹出场来救主角时我还有点感动，想象着兄妹重逢后的温馨画面，然后猝不及防就被喂了口屎…&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂谈" scheme="https://www.senventise.com/categories/others/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>给blog加了个句子api</title>
@@ -183,7 +227,7 @@
     <published>2018-08-03T04:13:14.000Z</published>
     <updated>2019-06-14T13:18:48.728Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="监督学习-Surpervised-learning"><a href="#监督学习-Surpervised-learning" class="headerlink" title="监督学习(Surpervised learning)"></a>监督学习(Surpervised learning)</h2><p>在监督学习中,给定一组数据,我们知道正确的输出结果应该是什么样子,并且知道在输入和输出之间有着一个特定的关系.<br><a id="more"></a></p><h3 id="回归问题-Regression"><a href="#回归问题-Regression" class="headerlink" title="回归问题(Regression)"></a>回归问题(Regression)</h3><p>通常是预测一个值.<br><em>eg.预测某个面积的房屋价格</em>  </p><h3 id="分类问题-Classification"><a href="#分类问题-Classification" class="headerlink" title="分类问题(Classification)"></a>分类问题(Classification)</h3><p>预测一个离散值,试图将输入变量与离散的类别对应起来.<br><em>eg.预测某个大小的肿瘤是良性还是恶性</em><br><strong>有时分类问题可能会有多种输出,可能不止两种.</strong>  </p><h2 id="无监督学习-Unsupervised-learning"><a href="#无监督学习-Unsupervised-learning" class="headerlink" title="无监督学习(Unsupervised learning)"></a>无监督学习(Unsupervised learning)</h2><p>在无监督学习中，我们基本上不知道结果会是什么样子,但我们可以通过聚类的方式从数据中提取一个特殊的结构.在无监督学习中给定的数据是和监督学习中给定的数据是不一样的.在无监督学习中给定的数据没有任何标签.<br><em>eg.Google News 会自动将网上的新闻分类,例如XX油井发生火灾的分类里面的页面都是互联网上关于这场火灾的报道.</em>  </p><h2 id="线性回归模型-Linear-regression"><a href="#线性回归模型-Linear-regression" class="headerlink" title="线性回归模型(Linear regression)"></a>线性回归模型(Linear regression)</h2><script type="math/tex; mode=display">h_\theta(x)=\theta_0+\theta_1x</script><p>(单变量线性回归)<br><strong><em>h</em>即为假设(hypothess),是拟合的函数.</strong>   </p><h3 id="代价函数-Cost-function-平方误差函数-Square-error-function"><a href="#代价函数-Cost-function-平方误差函数-Square-error-function" class="headerlink" title="代价函数(Cost function)/平方误差函数(Square error function)"></a>代价函数(Cost function)/平方误差函数(Square error function)</h3><script type="math/tex; mode=display">J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2</script>]]></content>
+    <content type="html"><![CDATA[<h2 id="监督学习-Surpervised-learning"><a href="#监督学习-Surpervised-learning" class="headerlink" title="监督学习(Surpervised learning)"></a>监督学习(Surpervised learning)</h2><p>在监督学习中,给定一组数据,我们知道正确的输出结果应该是什么样子,并且知道在输入和输出之间有着一个特定的关系.<br><a id="more"></a></p><h3 id="回归问题-Regression"><a href="#回归问题-Regression" class="headerlink" title="回归问题(Regression)"></a>回归问题(Regression)</h3><p>通常是预测一个值.<br><em>eg.预测某个面积的房屋价格</em>  </p><h3 id="分类问题-Classification"><a href="#分类问题-Classification" class="headerlink" title="分类问题(Classification)"></a>分类问题(Classification)</h3><p>预测一个离散值,试图将输入变量与离散的类别对应起来.<br><em>eg.预测某个大小的肿瘤是良性还是恶性</em><br><strong>有时分类问题可能会有多种输出,可能不止两种.</strong>  </p><h2 id="无监督学习-Unsupervised-learning"><a href="#无监督学习-Unsupervised-learning" class="headerlink" title="无监督学习(Unsupervised learning)"></a>无监督学习(Unsupervised learning)</h2><p>在无监督学习中，我们基本上不知道结果会是什么样子,但我们可以通过聚类的方式从数据中提取一个特殊的结构.在无监督学习中给定的数据是和监督学习中给定的数据是不一样的.在无监督学习中给定的数据没有任何标签.<br><em>eg.Google News 会自动将网上的新闻分类,例如XX油井发生火灾的分类里面的页面都是互联网上关于这场火灾的报道.</em>  </p><h2 id="线性回归模型-Linear-regression"><a href="#线性回归模型-Linear-regression" class="headerlink" title="线性回归模型(Linear regression)"></a>线性回归模型(Linear regression)</h2><p>$$ h_\theta(x)=\theta_0+\theta_1x $$<br>(单变量线性回归)<br><strong><em>h</em>即为假设(hypothess),是拟合的函数.</strong>   </p><h3 id="代价函数-Cost-function-平方误差函数-Square-error-function"><a href="#代价函数-Cost-function-平方误差函数-Square-error-function" class="headerlink" title="代价函数(Cost function)/平方误差函数(Square error function)"></a>代价函数(Cost function)/平方误差函数(Square error function)</h3><p>$$ J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2 $$   </p>]]></content>
     
     <summary type="html">
     
@@ -205,13 +249,13 @@
     <published>2018-07-09T04:13:14.000Z</published>
     <updated>2019-04-19T12:55:57.116Z</updated>
     
-    <content type="html"><![CDATA[<p>emmmm今天在尝试安装kali时遇到了一些问题，遂记之。   </p><h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p><h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置—&gt;网络适配器—&gt;桥接模式,解决。  </p><a id="more"></a><h3 id="问题3：安装VMware-tools时提示只读文件系统"><a href="#问题3：安装VMware-tools时提示只读文件系统" class="headerlink" title="问题3：安装VMware tools时提示只读文件系统"></a>问题3：安装VMware tools时提示只读文件系统</h3><p>原因：cdrom是只读的，解压时要加上 <code>-C /目录</code> 解压到指定目录。</p><p>总结：善用搜索引擎！</p>]]></content>
+    <content type="html"><![CDATA[<p>emmmm今天在尝试安装kali时遇到了一些问题，遂记之。   </p><h3 id="问题1：系统安装时出现错误"><a href="#问题1：系统安装时出现错误" class="headerlink" title="问题1：系统安装时出现错误"></a>问题1：系统安装时出现错误</h3><p>这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   </p><h3 id="问题2：没有网络连接"><a href="#问题2：没有网络连接" class="headerlink" title="问题2：没有网络连接"></a>问题2：没有网络连接</h3><p>编辑虚拟机设置–&gt;网络适配器–&gt;桥接模式,解决。  </p><a id="more"></a><h3 id="问题3：安装VMware-tools时提示只读文件系统"><a href="#问题3：安装VMware-tools时提示只读文件系统" class="headerlink" title="问题3：安装VMware tools时提示只读文件系统"></a>问题3：安装VMware tools时提示只读文件系统</h3><p>原因：cdrom是只读的，解压时要加上 <code>-C /目录</code> 解压到指定目录。</p><p>总结：善用搜索引擎！</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;emmmm今天在尝试安装kali时遇到了一些问题，遂记之。   &lt;/p&gt;
 &lt;h3 id=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;a href=&quot;#问题1：系统安装时出现错误&quot; class=&quot;headerlink&quot; title=&quot;问题1：系统安装时出现错误&quot;&gt;&lt;/a&gt;问题1：系统安装时出现错误&lt;/h3&gt;&lt;p&gt;这个问题是在图形引导安装系统时出现的，使用搜索引擎发现是因为在VMwAre分配的空间太小，于是重新安装，分配了20G空间，问题解决。   &lt;/p&gt;
-&lt;h3 id=&quot;问题2：没有网络连接&quot;&gt;&lt;a href=&quot;#问题2：没有网络连接&quot; class=&quot;headerlink&quot; title=&quot;问题2：没有网络连接&quot;&gt;&lt;/a&gt;问题2：没有网络连接&lt;/h3&gt;&lt;p&gt;编辑虚拟机设置—&amp;gt;网络适配器—&amp;gt;桥接模式,解决。  &lt;/p&gt;
+&lt;h3 id=&quot;问题2：没有网络连接&quot;&gt;&lt;a href=&quot;#问题2：没有网络连接&quot; class=&quot;headerlink&quot; title=&quot;问题2：没有网络连接&quot;&gt;&lt;/a&gt;问题2：没有网络连接&lt;/h3&gt;&lt;p&gt;编辑虚拟机设置–&amp;gt;网络适配器–&amp;gt;桥接模式,解决。  &lt;/p&gt;
     
     </summary>
     

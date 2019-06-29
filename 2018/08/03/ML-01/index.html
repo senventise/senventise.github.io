@@ -166,8 +166,9 @@ var _mtac = {};
 <h3 id="回归问题-Regression"><a href="#回归问题-Regression" class="headerlink" title="回归问题(Regression)"></a>回归问题(Regression)</h3><p>通常是预测一个值.<br><em>eg.预测某个面积的房屋价格</em>  </p>
 <h3 id="分类问题-Classification"><a href="#分类问题-Classification" class="headerlink" title="分类问题(Classification)"></a>分类问题(Classification)</h3><p>预测一个离散值,试图将输入变量与离散的类别对应起来.<br><em>eg.预测某个大小的肿瘤是良性还是恶性</em><br><strong>有时分类问题可能会有多种输出,可能不止两种.</strong>  </p>
 <h2 id="无监督学习-Unsupervised-learning"><a href="#无监督学习-Unsupervised-learning" class="headerlink" title="无监督学习(Unsupervised learning)"></a>无监督学习(Unsupervised learning)</h2><p>在无监督学习中，我们基本上不知道结果会是什么样子,但我们可以通过聚类的方式从数据中提取一个特殊的结构.在无监督学习中给定的数据是和监督学习中给定的数据是不一样的.在无监督学习中给定的数据没有任何标签.<br><em>eg.Google News 会自动将网上的新闻分类,例如XX油井发生火灾的分类里面的页面都是互联网上关于这场火灾的报道.</em>  </p>
-<h2 id="线性回归模型-Linear-regression"><a href="#线性回归模型-Linear-regression" class="headerlink" title="线性回归模型(Linear regression)"></a>线性回归模型(Linear regression)</h2><script type="math/tex; mode=display">h_\theta(x)=\theta_0+\theta_1x</script><p>(单变量线性回归)<br><strong><em>h</em>即为假设(hypothess),是拟合的函数.</strong>   </p>
-<h3 id="代价函数-Cost-function-平方误差函数-Square-error-function"><a href="#代价函数-Cost-function-平方误差函数-Square-error-function" class="headerlink" title="代价函数(Cost function)/平方误差函数(Square error function)"></a>代价函数(Cost function)/平方误差函数(Square error function)</h3><script type="math/tex; mode=display">J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2</script>
+<h2 id="线性回归模型-Linear-regression"><a href="#线性回归模型-Linear-regression" class="headerlink" title="线性回归模型(Linear regression)"></a>线性回归模型(Linear regression)</h2><p>$$ h_\theta(x)=\theta_0+\theta_1x $$<br>(单变量线性回归)<br><strong><em>h</em>即为假设(hypothess),是拟合的函数.</strong>   </p>
+<h3 id="代价函数-Cost-function-平方误差函数-Square-error-function"><a href="#代价函数-Cost-function-平方误差函数-Square-error-function" class="headerlink" title="代价函数(Cost function)/平方误差函数(Square error function)"></a>代价函数(Cost function)/平方误差函数(Square error function)</h3><p>$$ J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^i)-y^i)^2 $$   </p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -315,7 +316,7 @@ var _mtac = {};
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        12
                     </p>
                 </div>
             </div>
@@ -335,7 +336,7 @@ var _mtac = {};
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        7
                     </p>
                 </div>
             </div>
@@ -427,7 +428,7 @@ var _mtac = {};
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/others/">
@@ -435,7 +436,7 @@ var _mtac = {};
                 <span class="level-item">杂谈</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/life/">
@@ -457,7 +458,7 @@ var _mtac = {};
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArchLinux/" style="font-size: 15px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 20px;">Galgame</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 15px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 20px;">Galgame</a> <a href="/tags/Steam/" style="font-size: 10px;">Steam</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/Games/" style="font-size: 10px;">游戏</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -471,6 +472,32 @@ var _mtac = {};
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
+                    <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T11:24:09.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -511,32 +538,6 @@ var _mtac = {};
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T08:31:25.000Z">2019-03-10</time></div>
-                    <a href="/2019/03/10/新建了一个Galgame记录页面/" class="has-link-black-ter is-size-6">新建了一个Galgame记录页面</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-20T08:36:13.000Z">2019-01-20</time></div>
-                    <a href="/2019/01/20/archlinux滚挂/" class="has-link-black-ter is-size-6">archlinux滚挂</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -555,7 +556,7 @@ var _mtac = {};
                     <span class="level-item">六月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -654,6 +655,13 @@ var _mtac = {};
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Steam/">
+                        <span class="tag">Steam</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
                         <span class="tag is-grey">1</span>
@@ -663,6 +671,13 @@ var _mtac = {};
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Games/">
+                        <span class="tag">游戏</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -701,6 +716,32 @@ var _mtac = {};
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
+                    <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T11:24:09.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
                     <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
                     <p class="is-size-7 is-uppercase">
@@ -736,32 +777,6 @@ var _mtac = {};
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T08:31:25.000Z">2019-03-10</time></div>
-                    <a href="/2019/03/10/新建了一个Galgame记录页面/" class="has-link-black-ter is-size-6">新建了一个Galgame记录页面</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-20T08:36:13.000Z">2019-01-20</time></div>
-                    <a href="/2019/01/20/archlinux滚挂/" class="has-link-black-ter is-size-6">archlinux滚挂</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -780,7 +795,7 @@ var _mtac = {};
                     <span class="level-item">六月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -879,6 +894,13 @@ var _mtac = {};
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Steam/">
+                        <span class="tag">Steam</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
                         <span class="tag is-grey">1</span>
@@ -888,6 +910,13 @@ var _mtac = {};
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Games/">
+                        <span class="tag">游戏</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
