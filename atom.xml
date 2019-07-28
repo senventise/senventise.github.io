@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.senventise.com/"/>
-  <updated>2019-07-18T13:48:29.275Z</updated>
+  <updated>2019-07-28T08:33:00.581Z</updated>
   <id>https://www.senventise.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论回收站的重要性</title>
+    <link href="https://www.senventise.com/2019/07/28/%E8%AE%BA%E5%9B%9E%E6%94%B6%E7%AB%99%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>https://www.senventise.com/2019/07/28/论回收站的重要性/</id>
+    <published>2019-07-28T08:27:48.000Z</published>
+    <updated>2019-07-28T08:33:00.581Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵<a id="more"></a>，想到可能是配置文件有毛病，于是我气急败坏地想要删掉配置文件，当时可能脑子气糊涂了，手贱打错了目录：<br><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.config</span><br></pre></td></tr></table></figure></p><p>按下回车的那一刻，我一看卧槽不对啊，然后火速<code>ctrl+c</code>，做了个深呼吸，<code>ls</code> 看了一下发现果然就剩三四十个目录了😇</p><h2 id="亡羊补牢"><a href="#亡羊补牢" class="headerlink" title="亡羊补牢"></a>亡羊补牢</h2><p>kde 本来就是有回收站的，目录位于<code>~/.local/trash/files</code><br>然后再把<code>rm</code>替换掉以防手贱，google 了一下正好有个软件包：<br><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S trash</span><br></pre></td></tr></table></figure></p><p>使用方法和<code>rm</code>一样，所以在.zshrc里加上两行:<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias rm=trash #替换rm命令</span><br><span class="line">alias RM=/bin/rm #备用</span><br></pre></td></tr></table></figure></p><p>在此祭奠我那逝去的一堆配置文件。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="ArchLinux" scheme="https://www.senventise.com/tags/ArchLinux/"/>
+    
+  </entry>
   
   <entry>
     <title>Blog 最近的动向</title>
@@ -43,9 +65,9 @@
     <link href="https://www.senventise.com/2019/07/18/%E5%85%B3%E4%BA%8E%E5%BC%82%E5%B8%B8%E5%8A%A8%E7%94%BB%E5%8C%96/"/>
     <id>https://www.senventise.com/2019/07/18/关于异常动画化/</id>
     <published>2019-07-18T12:22:20.000Z</published>
-    <updated>2019-07-18T13:27:07.849Z</updated>
+    <updated>2019-07-28T08:30:10.716Z</updated>
     
-    <content type="html"><![CDATA[<p>在逛 v 站的时候看到<a href="https://v2ex.com/t/580696" target="_blank" rel="noopener">b 站出 4k 清晰度了</a>这篇文章，进去看了下，没想到异常生物见闻录已经动画化了，小说原作虽然听过但还没看，出于好奇心理看了会，但是看了 3 分钟就看不下去了……</p><a id="more"></a><p>但是小说原作口碑还是不错的，我也被安利过好几次，我就不信邪把原作补完了，感觉相当不错，遂到 b 站完整地看完一集，在这吐吐槽。</p><h2 id="画面"><a href="#画面" class="headerlink" title="画面"></a>画面</h2><p>原作对莉莉的描述：</p><blockquote><p>皮肤带着些微的小麦色</p></blockquote><p>明明是些微小麦色啊！怎么就黑成这样了？</p><p>薇薇安：</p><blockquote><p>她身量高挑，目测至少得有一米七，身材纤细，长及腰，穿着一身很朴素的黑色连衣裙，脚上穿着看上去略显陈旧的运动鞋，除此之外再无装饰，但朴素的穿着并不能掩盖少女的容貌出众：她容貌精致而带有一种“贵气”，眼睛不大，但微微眯起来的时候似乎带着一种优雅的美感，鼻子小巧而微微上翘，嘴唇很薄，不施粉黛却红艳欲滴，整体的脸型似乎略带点亚欧混血的感觉，给人的印象是一个漂亮的混血姑娘。最引人注目的是她的脸色：肌肤干净柔嫩到几乎吹弹可破，而且异常白净……甚至白净的有些过头了，郝仁甚至觉得那有点苍白。</p></blockquote><p>明明是“朴素”，“容貌出众”，“吹弹可破”，“异常白净”，怎么就成这幅鬼样子了？？？土掉渣的灰色皮肤，莫名奇妙的头饰，说好的美少女呢？百度百科的图都比这不知道高到哪里去了。</p><p>渡鸦12345也是，制作组是对黑皮肤有什么怨念吗？非得全员黑皮？</p><h2 id="配音"><a href="#配音" class="headerlink" title="配音"></a>配音</h2><p>男主声音有气无力，就是那种典型的废柴流男主：死气沉沉，蔫了吧唧。</p><p>女性角色全在卖萌，人薇薇安好歹是“招来红月的女伯爵”，到了这儿和初中生似的。</p><p>这配音真的震撼我妈，全程不敢仔细听。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>画面辣眼睛，配音辣耳朵，台词莫名奇妙，还有一点恶意卖肉倾向。</p><p>原作我觉得很棒，准备二刷。</p><p>动画多看一秒我宝贵的人生就浪费了一秒。绝对的粪作。</p>]]></content>
+    <content type="html"><![CDATA[<p>在逛 v 站的时候看到<a href="https://v2ex.com/t/580696" target="_blank" rel="noopener">b 站出 4k 清晰度了</a>这篇文章，进去看了下，没想到异常生物见闻录已经动画化了，小说原作虽然听过但还没看，出于好奇心理看了会，但是看了 3 分钟就看不下去了……</p><a id="more"></a><p>但是小说原作口碑还是不错的，我也被安利过好几次，我就不信邪把原作补完了，感觉相当不错，遂到 b 站完整地看完一集，在这吐吐槽。</p><h2 id="画面"><a href="#画面" class="headerlink" title="画面"></a>画面</h2><p>原作对莉莉的描述：</p><blockquote><p>皮肤带着些微的小麦色</p></blockquote><p>明明是些微小麦色啊！怎么就黑成这样了？</p><p>薇薇安：</p><blockquote><p>她身量高挑，目测至少得有一米七，身材纤细，长及腰，穿着一身很朴素的黑色连衣裙，脚上穿着看上去略显陈旧的运动鞋，除此之外再无装饰，但朴素的穿着并不能掩盖少女的容貌出众：她容貌精致而带有一种“贵气”，眼睛不大，但微微眯起来的时候似乎带着一种优雅的美感，鼻子小巧而微微上翘，嘴唇很薄，不施粉黛却红艳欲滴，整体的脸型似乎略带点亚欧混血的感觉，给人的印象是一个漂亮的混血姑娘。最引人注目的是她的脸色：肌肤干净柔嫩到几乎吹弹可破，而且异常白净……甚至白净的有些过头了，郝仁甚至觉得那有点苍白。</p></blockquote><p>明明是“朴素”，“容貌出众”，“吹弹可破”，“异常白净”，怎么就成这幅鬼样子了？？？土掉渣的灰色皮肤，莫名奇妙的头饰，说好的美少女呢？百度百科的图都比这不知道高到哪里去了。</p><p>渡鸦12345也是，制作组是对黑皮肤有什么怨念吗？非得全员黑皮？</p><h2 id="配音"><a href="#配音" class="headerlink" title="配音"></a>配音</h2><p>男主声音有气无力，就是那种典型的废柴流男主：死气沉沉，蔫了吧唧。</p><p>女性角色全在卖萌，人薇薇安好歹是“招来红月的女伯爵”，到了这儿和初中生似的。</p><p>这配音真的震撼我妈，全程不敢仔细听。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>画面辣眼睛，配音辣耳朵，台词莫名奇妙，还有一点恶意卖肉倾向。</p><p>原作我觉得很棒，准备二刷。</p><p>动画多看一秒我宝贵的人生就浪费了一秒。</p>]]></content>
     
     <summary type="html">
     
