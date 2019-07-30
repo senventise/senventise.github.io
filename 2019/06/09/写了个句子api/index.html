@@ -165,14 +165,14 @@
 <h2 id="构思"><a href="#构思" class="headerlink" title="构思"></a>构思</h2><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>用的是腾讯云的<a href="https://cloud.tencent.com/document/product/583" target="_blank" rel="noopener">无服务器云函数</a>,虽然在阿里云有个闲置的服务器，但是没有备案，很久以前就看到过腾讯云的无服务器云函数，感觉不错，但是一直没机会用。</p>
 <h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p>js里面用ajax更新下就完事了。</p>
 <h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="1-整理句子"><a href="#1-整理句子" class="headerlink" title="1.整理句子"></a>1.整理句子</h3><p>我把句子塞到了一个json里面，然后把这个文件上传到了<a href="https://cloud.tencent.com/document/product/436" target="_blank" rel="noopener">腾讯云COS</a>里，文件格式大致如下</p>
-<figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="hljs-attr">"我们可以卑微如尘土，但不可扭曲如蛆虫。"</span>: <span class="hljs-string">"季业"</span>,</span><br><span class="line">	<span class="hljs-attr">"如果说，有上帝的话。人类一思考，上帝就发笑，如果人类不思考，上帝连发笑都不屑于。"</span>: <span class="hljs-string">"严锋"</span>,</span><br><span class="line">	<span class="hljs-attr">"前进！前进！不择手段的前进！"</span>: <span class="hljs-string">"《三体》"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"我们可以卑微如尘土，但不可扭曲如蛆虫。"</span>: <span class="string">"季业"</span>,</span><br><span class="line">	<span class="attr">"如果说，有上帝的话。人类一思考，上帝就发笑，如果人类不思考，上帝连发笑都不屑于。"</span>: <span class="string">"严锋"</span>,</span><br><span class="line">	<span class="attr">"前进！前进！不择手段的前进！"</span>: <span class="string">"《三体》"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>左边是句子，右边是来源。</p>
 <h3 id="2-部署云函数"><a href="#2-部署云函数" class="headerlink" title="2.部署云函数"></a>2.部署云函数</h3><p>云函数使用 Python3.6 ，具体代码如下</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> json</span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"><span class="hljs-keyword">import</span> requests <span class="hljs-keyword">as</span> rq</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main_handler</span><span class="hljs-params">(event, context)</span>:</span></span><br><span class="line">    s = json.loads(rq.get(<span class="hljs-string">"https://example.myqcloud.com/sentense.json"</span>).text)</span><br><span class="line">    s_l = []</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s:</span><br><span class="line">        s_l.append(i)</span><br><span class="line">    rand = random.randint(<span class="hljs-number">0</span>,len(s_l)<span class="hljs-number">-1</span>)</span><br><span class="line">    data = &#123;<span class="hljs-string">"sentense"</span>:s_l[rand],<span class="hljs-string">"source"</span>:s[s_l[rand]]&#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> json.dumps(data)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> requests <span class="keyword">as</span> rq</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main_handler</span><span class="params">(event, context)</span>:</span></span><br><span class="line">    s = json.loads(rq.get(<span class="string">"https://example.myqcloud.com/sentense.json"</span>).text)</span><br><span class="line">    s_l = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        s_l.append(i)</span><br><span class="line">    rand = random.randint(<span class="number">0</span>,len(s_l)<span class="number">-1</span>)</span><br><span class="line">    data = &#123;<span class="string">"sentense"</span>:s_l[rand],<span class="string">"source"</span>:s[s_l[rand]]&#125;</span><br><span class="line">    <span class="keyword">return</span> json.dumps(data)</span><br></pre></td></tr></table></figure>
 <p>反正性能需求也不高，随便写了一个。</p>
 <p>触发方式选择<code>Api网关</code>，然后到<a href="https://console.cloud.tencent.com/apigateway" target="_blank" rel="noopener">Api网关</a>里设置允许跨域访问，<em>跨域访问好像只能用在生产环境中，所以记得发布</em>。</p>
 <h3 id="3-前端相关"><a href="#3-前端相关" class="headerlink" title="3.前端相关"></a>3.前端相关</h3><p>随便写了个js，具体代码如下</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">juzi</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">var</span> xmlhttp;</span><br><span class="line">	<span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.XMLHttpRequest)</span><br><span class="line">	&#123;</span><br><span class="line">		xmlhttp=<span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.onreadystatechange=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function">	</span>&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span> (xmlhttp.readyState==<span class="hljs-number">4</span> &amp;&amp; xmlhttp.status==<span class="hljs-number">200</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			j = <span class="hljs-built_in">JSON</span>.parse(xmlhttp.responseText);</span><br><span class="line">			j= <span class="hljs-built_in">JSON</span>.parse(j);</span><br><span class="line">			<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"juzi"</span>).innerHTML=j.sentense;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"https://example.myqcloud.com/release/juzi"</span>,<span class="hljs-literal">true</span>);</span><br><span class="line">	xmlhttp.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">juzi</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> xmlhttp;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">	&#123;</span><br><span class="line">		xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			j = <span class="built_in">JSON</span>.parse(xmlhttp.responseText);</span><br><span class="line">			j= <span class="built_in">JSON</span>.parse(j);</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">"juzi"</span>).innerHTML=j.sentense;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"https://example.myqcloud.com/release/juzi"</span>,<span class="literal">true</span>);</span><br><span class="line">	xmlhttp.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -307,7 +307,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>上海，浦东新区</span>
+                        <span>中国,上海</span>
                     </p>
                     
                 </div>
@@ -320,7 +320,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        13
                     </p>
                 </div>
             </div>
@@ -330,7 +330,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        3
                     </p>
                 </div>
             </div>
@@ -340,7 +340,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        8
                     </p>
                 </div>
             </div>
@@ -403,6 +403,26 @@
                 </a>
             </li>
         
+            <li>
+                <a class="level is-mobile" href="https://blog.martis.me" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Marti&#39;s Blog</span>
+                    </span>
+                    <span class="level-right">
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://set233.xyz" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">set233</span>
+                    </span>
+                    <span class="level-right">
+                    </span>
+                </a>
+            </li>
+        
         </ul>
         </div>
     </div>
@@ -442,14 +462,6 @@
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/review/">
-            <span class="level-start">
-                <span class="level-item">评价</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
         </a></li>
             </ul>
         </div>
@@ -462,7 +474,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 15px;">Galgame</a> <a href="/tags/Steam/" style="font-size: 10px;">Steam</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/Blog/" style="font-size: 10px;">博客</a> <a href="/tags/Novel/" style="font-size: 10px;">小说</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/Games/" style="font-size: 10px;">游戏</a> <a href="/tags/Shit/" style="font-size: 10px;">粪作</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 15px;">Galgame</a> <a href="/tags/Steam/" style="font-size: 10px;">Steam</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/Blog/" style="font-size: 10px;">博客</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/Games/" style="font-size: 10px;">游戏</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -507,19 +519,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-18T12:22:20.000Z">2019-07-18</time></div>
-                    <a href="/2019/07/18/关于异常动画化/" class="has-link-black-ter is-size-6">关于异常动画化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/review/">评价</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
                     <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
                     <p class="is-size-7 is-uppercase">
@@ -537,6 +536,19 @@
                     <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                     </p>
                 </div>
             </div>
@@ -560,7 +572,7 @@
                     <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -691,13 +703,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Novel/">
-                        <span class="tag">小说</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
                         <span class="tag is-grey">1</span>
@@ -707,13 +712,6 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Games/">
                         <span class="tag">游戏</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Shit/">
-                        <span class="tag">粪作</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -778,19 +776,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-18T12:22:20.000Z">2019-07-18</time></div>
-                    <a href="/2019/07/18/关于异常动画化/" class="has-link-black-ter is-size-6">关于异常动画化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/review/">评价</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
                     <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
                     <p class="is-size-7 is-uppercase">
@@ -808,6 +793,19 @@
                     <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                     </p>
                 </div>
             </div>
@@ -831,7 +829,7 @@
                     <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -962,13 +960,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Novel/">
-                        <span class="tag">小说</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
                         <span class="tag is-grey">1</span>
@@ -978,13 +969,6 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Games/">
                         <span class="tag">游戏</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Shit/">
-                        <span class="tag">粪作</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

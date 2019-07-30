@@ -167,8 +167,8 @@
             
         </h1>
         <div class="content">
-            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵</p>
-        </div>
+            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵
+        </p></div>
         
         
         <div class="level is-mobile">
@@ -227,7 +227,7 @@
         <div class="content">
             <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
 <p>输出如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -286,10 +286,10 @@
         </h1>
         <div class="content">
             <p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
 <p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p>
 <p>​    </p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
 <p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
         </div>
         
@@ -344,7 +344,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>上海，浦东新区</span>
+                        <span>中国,上海</span>
                     </p>
                     
                 </div>
@@ -357,7 +357,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        13
                     </p>
                 </div>
             </div>
@@ -367,7 +367,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        3
                     </p>
                 </div>
             </div>
@@ -377,7 +377,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        8
                     </p>
                 </div>
             </div>
@@ -440,6 +440,26 @@
                 </a>
             </li>
         
+            <li>
+                <a class="level is-mobile" href="https://blog.martis.me" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Marti&#39;s Blog</span>
+                    </span>
+                    <span class="level-right">
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://set233.xyz" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">set233</span>
+                    </span>
+                    <span class="level-right">
+                    </span>
+                </a>
+            </li>
+        
         </ul>
         </div>
     </div>
@@ -479,14 +499,6 @@
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/review/">
-            <span class="level-start">
-                <span class="level-item">评价</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
         </a></li>
             </ul>
         </div>
@@ -499,7 +511,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 15px;">Galgame</a> <a href="/tags/Steam/" style="font-size: 10px;">Steam</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/Blog/" style="font-size: 10px;">博客</a> <a href="/tags/Novel/" style="font-size: 10px;">小说</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/Games/" style="font-size: 10px;">游戏</a> <a href="/tags/Shit/" style="font-size: 10px;">粪作</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
+        <a href="/tags/ArchLinux/" style="font-size: 20px;">ArchLinux</a> <a href="/tags/Galgame/" style="font-size: 15px;">Galgame</a> <a href="/tags/Steam/" style="font-size: 10px;">Steam</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/Blog/" style="font-size: 10px;">博客</a> <a href="/tags/MachineLearning/" style="font-size: 10px;">机器学习</a> <a href="/tags/Games/" style="font-size: 10px;">游戏</a> <a href="/tags/CyberSecurity/" style="font-size: 10px;">网络安全</a>
     </div>
 </div>
 
@@ -544,19 +556,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-18T12:22:20.000Z">2019-07-18</time></div>
-                    <a href="/2019/07/18/关于异常动画化/" class="has-link-black-ter is-size-6">关于异常动画化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/review/">评价</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
                     <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
                     <p class="is-size-7 is-uppercase">
@@ -574,6 +573,19 @@
                     <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                     </p>
                 </div>
             </div>
@@ -597,7 +609,7 @@
                     <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -728,13 +740,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Novel/">
-                        <span class="tag">小说</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
                         <span class="tag is-grey">1</span>
@@ -744,13 +749,6 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Games/">
                         <span class="tag">游戏</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Shit/">
-                        <span class="tag">粪作</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -815,19 +813,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-18T12:22:20.000Z">2019-07-18</time></div>
-                    <a href="/2019/07/18/关于异常动画化/" class="has-link-black-ter is-size-6">关于异常动画化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/review/">评价</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-29T04:12:57.000Z">2019-06-29</time></div>
                     <a href="/2019/06/29/Steam下载提示清单不可用/" class="has-link-black-ter is-size-6">Steam下载提示清单不可用</a>
                     <p class="is-size-7 is-uppercase">
@@ -845,6 +830,19 @@
                     <a href="/2019/06/27/我是谁/" class="has-link-black-ter is-size-6">我是谁</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/others/">杂谈</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
+                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                     </p>
                 </div>
             </div>
@@ -868,7 +866,7 @@
                     <span class="level-item">七月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -999,13 +997,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Novel/">
-                        <span class="tag">小说</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/MachineLearning/">
                         <span class="tag">机器学习</span>
                         <span class="tag is-grey">1</span>
@@ -1015,13 +1006,6 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Games/">
                         <span class="tag">游戏</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Shit/">
-                        <span class="tag">粪作</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
