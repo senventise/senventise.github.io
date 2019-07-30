@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.senventise.com/galgame/index.html</loc>
+    
+    <lastmod>2019-07-30T12:45:24.444Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.senventise.com/about/index.html</loc>
     
     <lastmod>2019-07-30T12:39:21.777Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://www.senventise.com/2019/07/18/Blog-%E6%9C%80%E8%BF%91%E7%9A%84%E5%8A%A8%E5%90%91/</loc>
     
     <lastmod>2019-07-18T13:48:29.275Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.senventise.com/galgame/index.html</loc>
-    
-    <lastmod>2019-07-18T12:31:35.569Z</lastmod>
     
   </url>
   
