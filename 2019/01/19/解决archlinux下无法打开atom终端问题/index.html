@@ -161,13 +161,13 @@
         </h1>
         <div class="content">
             <p>某次滚动更新以后忽然发现 Atom 的终端不能用了（<a href="https://github.com/platformio/platformio-atom-ide-terminal" target="_blank" rel="noopener">platformio-atom-ide-terminal</a>），到 <a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632" target="_blank" rel="noopener">issues</a> 里翻了一下，貌似出现这个问题的都是 Manjaro/Arch 用户，解决方法如下：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ~/.atom/packages/platformio-ide-terminal</span><br><span class="line">$ vim lib/process.coffee</span><br></pre></td></tr></table></figure>
 <p>将第一行的 <code>pty = require &#39;pty.js&#39;</code> 改为 <code>pty = require &#39;node-pty-prebuilt&#39;</code>     </p>
 <p>​    </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim package.json</span><br></pre></td></tr></table></figure>
 <p>添加依赖：<code>&quot;node-pty-prebuilt&quot;: &quot;^0.7.6&quot;</code>      </p>
 <a id="more"></a>     
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install node-pyt-prebuilt --save  </span><br><span class="line">$ apm rebuild</span><br></pre></td></tr></table></figure>
 <p>然后重启 atom，ctrl+`成功打开。  </p>
 <p><a href="https://github.com/platformio/platformio-atom-ide-terminal/issues/632#issuecomment-451720322" target="_blank" rel="noopener">出处</a>在此</p>
 
