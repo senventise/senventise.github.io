@@ -1,0 +1,173 @@
+<head>
+    <link href="/css/materialize_mod.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <ul class="collapsible expandable">
+    <!--
+    <li>
+      <div class="collapsible-header">名称</div>
+      <div class="collapsible-body">
+          <p>2019 </p>
+          <p>会社</p>
+      </div>
+    </li>
+    -->
+    <li>
+      <div class="collapsible-header">美少女万华镜1</div>
+      <div class="collapsible-body">
+          <p>2018 x/x</p>
+          <p>ωstar</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">沙耶之歌</div>
+      <div class="collapsible-body">
+          <p>2018 x/x</p>
+          <p>Nitro+</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">美少女万华镜2</div>
+      <div class="collapsible-body">
+          <p>2019 2/11</p>
+          <p>ωstar</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">美少女万华镜2.5</div>
+      <div class="collapsible-body">
+          <p>2019 2/14</p>
+          <p>ωstar</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">美少女万华镜3</div>
+      <div class="collapsible-body">
+          <p>2019 2/15</p>
+          <p>ωstar</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">美少女万华镜4</div>
+      <div class="collapsible-body">
+          <p>2019 2/16</p>
+          <p>ωstar</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">缘之空</div>
+      <div class="collapsible-body">
+          <p>2019 2/17-2/25</p>
+          <p>Sphere</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">千恋万花</div>
+      <div class="collapsible-body">
+          <p>2019 2/27-3/2</p>
+          <p>柚子</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">Riddle Joker</div>
+      <div class="collapsible-body">
+          <p>2019 3/11-3/13</p>
+          <p>柚子</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">君与彼女与彼女之恋</div>
+      <div class="collapsible-body">
+          <p>2019 3/17-3/18</p>
+          <p>Nitro+</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">近月少女的礼仪</div>
+      <div class="collapsible-body">
+          <p>2019 3/31-4/1</p>
+          <p>Navel</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">少女理论及其周边</div>
+      <div class="collapsible-body">
+          <p>2019 4/5-4/6</p>
+          <p>Navel</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">青鸟</div>
+      <div class="collapsible-body">
+          <p>2019 4/14-4/19</p>
+          <p>Purple</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">纸上的魔法使</div>
+      <div class="collapsible-body">
+          <p>2019 5/13-5/20</p>
+          <p>ウグイスカグラ</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">末世孤雄1</div>
+      <div class="collapsible-body">
+          <p>2019 7/2</p>
+          <p>Us:track</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">想要传达给你的爱恋</div>
+      <div class="collapsible-body">
+          <p>2019 7/10</p>
+          <p>SEACOXX</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">末世孤雄2</div>
+      <div class="collapsible-body">
+          <p>2019 7/24</p>
+          <p>Us:track</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">末世孤雄3</div>
+      <div class="collapsible-body">
+          <p>2019 7/24</p>
+          <p>Us:track</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">末世孤雄0</div>
+      <div class="collapsible-body">
+          <p>2019 7/24</p>
+          <p>Us:track</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">月影魅像-解放之羽</div>
+      <div class="collapsible-body">
+          <p>2019 7/30</p>
+          <p>あっぷりけ</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">牵绊闪耀的恋之伊吕波</div>
+      <div class="collapsible-body">
+          <p>2019 5/5-5/7</p>
+          <p>CRYSTALiA</p>
+      </div>
+    </li>
+  </ul>
+  <script type="text/javascript">
+      //M.AutoInit();
+      document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.collapsible.expandable');
+          var instance = M.Collapsible.init(elems, {
+          accordion: false
+        });
+      });
+  </script>
+</body>
