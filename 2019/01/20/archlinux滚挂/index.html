@@ -162,29 +162,29 @@
         <div class="content">
             <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
 <p>输出如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p>
 <ol>
 <li><p>进入 livecd </p>
 </li>
 <li><p>挂载相应分区：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>chroot:</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新系统：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>退出 chroot：</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新 grub 配置：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p>
- <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p> ​    </p>
 </li>
 </ol>

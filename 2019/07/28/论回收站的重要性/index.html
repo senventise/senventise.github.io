@@ -160,10 +160,10 @@
             
         </h1>
         <div class="content">
-            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵<a id="more"></a>，想到可能是配置文件有毛病，于是我气急败坏地想要删掉配置文件，当时可能脑子气糊涂了，手贱打错了目录：<br><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.config</span><br></pre></td></tr></table></figure></p>
+            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>某一天，我正在折腾 aria2，不知道为什么守护进程一直起不来，google 了半小时也没进展，忽然福至心灵<a id="more"></a>，想到可能是配置文件有毛病，于是我气急败坏地想要删掉配置文件，当时可能脑子气糊涂了，手贱打错了目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.config</span><br></pre></td></tr></table></figure></p>
 <p>按下回车的那一刻，我一看卧槽不对啊，然后火速<code>ctrl+c</code>，做了个深呼吸，<code>ls</code> 看了一下发现果然就剩三四十个目录了😇</p>
-<h2 id="亡羊补牢"><a href="#亡羊补牢" class="headerlink" title="亡羊补牢"></a>亡羊补牢</h2><p>kde 本来就是有回收站的，目录位于<code>~/.local/trash/files</code><br>然后再把<code>rm</code>替换掉以防手贱，google 了一下正好有个软件包：<br><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S trash</span><br></pre></td></tr></table></figure></p>
-<p>使用方法和<code>rm</code>一样，所以在.zshrc里加上两行:<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias rm=trash #替换rm命令</span><br><span class="line">alias RM=/bin/rm #备用</span><br></pre></td></tr></table></figure></p>
+<h2 id="亡羊补牢"><a href="#亡羊补牢" class="headerlink" title="亡羊补牢"></a>亡羊补牢</h2><p>kde 本来就是有回收站的，目录位于<code>~/.local/trash/files</code><br>然后再把<code>rm</code>替换掉以防手贱，google 了一下正好有个软件包：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S trash</span><br></pre></td></tr></table></figure></p>
+<p>使用方法和<code>rm</code>一样，所以在.zshrc里加上两行:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias rm=trash #替换rm命令</span><br><span class="line">alias RM=/bin/rm #备用</span><br></pre></td></tr></table></figure></p>
 <p>在此祭奠我那逝去的一堆配置文件。</p>
 
         </div>

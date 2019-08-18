@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.senventise.com/about/index.html</loc>
+    
+    <lastmod>2019-08-18T10:41:44.796Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.senventise.com/galgame/index.html</loc>
     
     <lastmod>2019-08-10T13:16:56.431Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://www.senventise.com/files/yoduzw.json</loc>
     
     <lastmod>2019-08-10T00:48:09.629Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.senventise.com/about/index.html</loc>
-    
-    <lastmod>2019-07-30T12:39:21.777Z</lastmod>
     
   </url>
   
