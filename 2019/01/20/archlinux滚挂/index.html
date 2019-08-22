@@ -162,29 +162,29 @@
         <div class="content">
             <p>昨天晚上滚动更新了一次，今天早上重启电脑发现挂了……这是第一次滚挂，有点兴奋（#滑稽）  </p>
 <p>输出如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Warning:/lib/modules/4.20.3-arch1-1-ARCH/modules.devname not found - ignoring</span><br><span class="line">starting version 240</span><br><span class="line">ERROR: device UUID=xxxxxxx not found.Skipping fsck.</span><br><span class="line">mount: /new_root: Can&apos;t find UUID=xxxxxxx.</span><br><span class="line">You are now being dropped into an emergency shell.</span><br><span class="line">sh: can&apos;t access tty; job control turned off</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>提示进入了 emergency shell ，但是键盘无法输入， google 了一下，找到了解决方法：  </p>
 <ol>
 <li><p>进入 livecd </p>
 </li>
 <li><p>挂载相应分区：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sha* /mnt</span><br><span class="line">mount /dev/sha* /mnt/boot</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>chroot:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新系统：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>退出 chroot：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">exit</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新 grub 配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /mnt/boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>取消挂载并重启（记得在BIOS里把启动顺序改回来）：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 <p> ​    </p>
 </li>
 </ol>
@@ -211,6 +211,7 @@
 <div class="card">
     <div class="card-content">
         <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+		<p>欢迎帮我介绍女朋友</p>
         <div class="buttons is-centered">
             
                 
@@ -337,7 +338,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        14
                     </p>
                 </div>
             </div>
@@ -461,7 +462,7 @@
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/others/">
@@ -505,6 +506,19 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T10:43:05.000Z">2019-08-18</time></div>
+                    <a href="/2019/08/18/上海交通卡查询api/" class="has-link-black-ter is-size-6">上海交通卡查询api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -558,19 +572,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
-                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -582,6 +583,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -767,6 +779,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T10:43:05.000Z">2019-08-18</time></div>
+                    <a href="/2019/08/18/上海交通卡查询api/" class="has-link-black-ter is-size-6">上海交通卡查询api</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-28T08:27:48.000Z">2019-07-28</time></div>
                     <a href="/2019/07/28/论回收站的重要性/" class="has-link-black-ter is-size-6">论回收站的重要性</a>
                     <p class="is-size-7 is-uppercase">
@@ -815,19 +840,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-09T08:07:01.000Z">2019-06-09</time></div>
-                    <a href="/2019/06/09/写了个句子api/" class="has-link-black-ter is-size-6">给blog加了个句子api</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tech/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -839,6 +851,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
