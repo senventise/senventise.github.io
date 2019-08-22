@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.senventise.com/"/>
-  <updated>2019-08-18T10:45:40.983Z</updated>
+  <updated>2019-07-28T08:33:00.581Z</updated>
   <id>https://www.senventise.com/</id>
   
   <author>
@@ -15,22 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>上海交通卡查询api</title>
-    <link href="https://www.senventise.com/2019/08/18/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%8D%A1%E6%9F%A5%E8%AF%A2api/"/>
-    <id>https://www.senventise.com/2019/08/18/上海交通卡查询api/</id>
-    <published>2019-08-18T10:43:05.000Z</published>
-    <updated>2019-08-18T10:45:40.983Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>论回收站的重要性</title>
