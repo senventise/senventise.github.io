@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.senventise.com/"/>
-  <updated>2019-07-28T08:33:00.581Z</updated>
+  <updated>2019-10-26T12:00:30.530Z</updated>
   <id>https://www.senventise.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TIM语音替换</title>
+    <link href="https://www.senventise.com/2019/10/26/TIM%E8%AF%AD%E9%9F%B3%E6%9B%BF%E6%8D%A2/"/>
+    <id>https://www.senventise.com/2019/10/26/TIM语音替换/</id>
+    <published>2019-10-26T11:35:12.000Z</published>
+    <updated>2019-10-26T12:00:30.530Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先奉上一首小诗:</p><blockquote><p>我们遇到什么 bug 也不要怕，</p><p>微笑着面对它，</p><p>消除 bug 的最好办法就是面对 bug，</p><p>坚持才是胜利，</p><p>加油，</p><p>奥利给！</p></blockquote><p>奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。</p><a id="more"></a><h2 id="寻找录音文件"><a href="#寻找录音文件" class="headerlink" title="寻找录音文件"></a>寻找录音文件</h2><p>推测录音文件应该在 <code>/sdcard/tencent/Tim</code> 下的某个文件夹下，于是：</p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> /sdcard/tencent/Tim</span><br><span class="line">tree . &gt; a</span><br><span class="line"><span class="hljs-comment"># 切到 TIM 并录音</span></span><br><span class="line">tree . &gt; b</span><br><span class="line">diff a b</span><br></pre></td></tr></table></figure><p>很容易就找到了录音所在文件夹：<code>/sdcard/tencent/Tim/{QQ号}/ptt</code></p><p>当时脑子搭线了，没想到去搜一下，其实酷安就有教程…</p><h2 id="制作录音"><a href="#制作录音" class="headerlink" title="制作录音"></a>制作录音</h2><p>先把视频下载下来，然后<code>ffmpeg</code>转成mp3，再根据大致的时间截取mp3。</p><p>然后用各种方法转成 amr 格式。</p><h2 id="大致实现"><a href="#大致实现" class="headerlink" title="大致实现"></a>大致实现</h2><p>手动替换很烦，于是打开 Termux 开始写代码，正好还有 Termux:API ，直接一步到位。（Termux实在是太棒了）</p><p>源码在 <a href="https://github.com/senventise/TIMRec" target="_blank" rel="noopener">Github</a></p><p>具体使用请看 README，欢迎 Star &amp; PR</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先奉上一首小诗:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们遇到什么 bug 也不要怕，&lt;/p&gt;
+&lt;p&gt;微笑着面对它，&lt;/p&gt;
+&lt;p&gt;消除 bug 的最好办法就是面对 bug，&lt;/p&gt;
+&lt;p&gt;坚持才是胜利，&lt;/p&gt;
+&lt;p&gt;加油，&lt;/p&gt;
+&lt;p&gt;奥利给！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.senventise.com/categories/tech/"/>
+    
+    
+      <category term="Python" scheme="https://www.senventise.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>论回收站的重要性</title>
@@ -65,13 +96,13 @@
     <link href="https://www.senventise.com/2019/06/29/Steam%E4%B8%8B%E8%BD%BD%E6%8F%90%E7%A4%BA%E6%B8%85%E5%8D%95%E4%B8%8D%E5%8F%AF%E7%94%A8/"/>
     <id>https://www.senventise.com/2019/06/29/Steam下载提示清单不可用/</id>
     <published>2019-06-29T04:12:57.000Z</published>
-    <updated>2019-06-29T04:22:51.071Z</updated>
+    <updated>2019-10-26T12:01:09.324Z</updated>
     
-    <content type="html"><![CDATA[<p>这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没有，提示“清单不可用”。<br><a id="more"></a> </p><p>正当我绝望的时候忽然福至心灵，想起来之前没事干在家目录用ncdu清理了下空间，当时好像在Steam文件夹删了些东西…  </p><p>于是我干脆<code>rm -rf ~/.local/share/Steam</code>，然后再重新打开Steam，提示需要安装，安装完再下载就不再报错了，顺利解决。  </p><p>这件事告诉我们不要瞎几把删东西，就算目录叫<code>cache</code>也不能瞎几把删，血的教训啊…</p>]]></content>
+    <content type="html"><![CDATA[<p>这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没用，提示“清单不可用”。<br><a id="more"></a> </p><p>正当我绝望的时候忽然福至心灵，想起来之前没事干在家目录用ncdu清理了下空间，当时好像在Steam文件夹删了些东西…  </p><p>于是我干脆<code>rm -rf ~/.local/share/Steam</code>，然后再重新打开Steam，提示需要安装，安装完再下载就不再报错了，顺利解决。  </p><p>这件事告诉我们不要瞎几把删东西，就算目录叫<code>cache</code>也不能瞎几把删，血的教训啊…</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没有，提示“清单不可用”。&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;这两天正好夏促，买了几个游戏。在Steam下载时却出错了，提示无法连接到网络，我还以为是夏促这几天人太多，后台崩了，就想着过两天再来，然而报错依旧，Google了一番也没什么收获，都是说换下载区，我换了好几个区都没用，提示“清单不可用”。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

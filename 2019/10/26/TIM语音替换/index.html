@@ -2,22 +2,26 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>分类: 生活 - Senventise&#39;s Blog</title>
+<title>TIM语音替换 - Senventise&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-    <meta name="keywords" content="senventise">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Senventise&#39;s Blog">
-<meta property="og:url" content="https://www.senventise.com/categories/life/index.html">
+    <meta name="description" content="首先奉上一首小诗:  我们遇到什么 bug 也不要怕， 微笑着面对它， 消除 bug 的最好办法就是面对 bug， 坚持才是胜利， 加油， 奥利给！  奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIM语音替换">
+<meta property="og:url" content="https://www.senventise.com/2019/10/26/TIM语音替换/index.html">
 <meta property="og:site_name" content="Senventise&#39;s Blog">
+<meta property="og:description" content="首先奉上一首小诗:  我们遇到什么 bug 也不要怕， 微笑着面对它， 消除 bug 的最好办法就是面对 bug， 坚持才是胜利， 加油， 奥利给！  奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-26T12:00:30.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Senventise&#39;s Blog">
+<meta name="twitter:title" content="TIM语音替换">
+<meta name="twitter:description" content="首先奉上一首小诗:  我们遇到什么 bug 也不要怕， 微笑着面对它， 消除 bug 的最好办法就是面对 bug， 坚持才是胜利， 加油， 奥利给！  奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。">
 
 
 
-<link rel="alternative" href="/atom.xml" title="Senventise&#39;s Blog" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="TIM语音替换" type="application/atom+xml">
 
 
 
@@ -129,34 +133,22 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">生活</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-05-28T04:13:14.000Z">2018-05-28</time>
+                <time class="level-item has-text-grey" datetime="2019-10-26T11:35:12.000Z">2019-10-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/life/">生活</a>
+                <a class="has-link-grey -link" href="/categories/tech/">技术</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 13 个字)
+                    2 分钟 读完 (大约 298 个字)
                 </span>
                 
             </div>
@@ -164,15 +156,40 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/05/28/2018-5-28-My-first-blog/">第一篇博客！</a>
+                TIM语音替换
             
         </h1>
         <div class="content">
-            <h1 id="My-first-blog-here"><a href="#My-first-blog-here" class="headerlink" title="My first blog here!"></a>My first blog here!</h1><p>Written by vim on termux,without Chinese input method.</p>
+            <p>首先奉上一首小诗:</p>
 <blockquote>
-<p>5/27/2018 21:58</p>
+<p>我们遇到什么 bug 也不要怕，</p>
+<p>微笑着面对它，</p>
+<p>消除 bug 的最好办法就是面对 bug，</p>
+<p>坚持才是胜利，</p>
+<p>加油，</p>
+<p>奥利给！</p>
 </blockquote>
+<p>奥利给中毒了，就想着做成语音聊天的时候发出去，于是开始研究替换 TIM 的录音文件。</p>
+<a id="more"></a>
+<h2 id="寻找录音文件"><a href="#寻找录音文件" class="headerlink" title="寻找录音文件"></a>寻找录音文件</h2><p>推测录音文件应该在 <code>/sdcard/tencent/Tim</code> 下的某个文件夹下，于是：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> /sdcard/tencent/Tim</span><br><span class="line">tree . &gt; a</span><br><span class="line"><span class="hljs-comment"># 切到 TIM 并录音</span></span><br><span class="line">tree . &gt; b</span><br><span class="line">diff a b</span><br></pre></td></tr></table></figure>
+<p>很容易就找到了录音所在文件夹：<code>/sdcard/tencent/Tim/{QQ号}/ptt</code></p>
+<p>当时脑子搭线了，没想到去搜一下，其实酷安就有教程…</p>
+<h2 id="制作录音"><a href="#制作录音" class="headerlink" title="制作录音"></a>制作录音</h2><p>先把视频下载下来，然后<code>ffmpeg</code>转成mp3，再根据大致的时间截取mp3。</p>
+<p>然后用各种方法转成 amr 格式。</p>
+<h2 id="大致实现"><a href="#大致实现" class="headerlink" title="大致实现"></a>大致实现</h2><p>手动替换很烦，于是打开 Termux 开始写代码，正好还有 Termux:API ，直接一步到位。（Termux实在是太棒了）</p>
+<p>源码在 <a href="https://github.com/senventise/TIMRec" target="_blank" rel="noopener">Github</a></p>
+<p>具体使用请看 README，欢迎 Star &amp; PR</p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/">Python</a>
+                </div>
+            </div>
         </div>
         
         
@@ -182,15 +199,88 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？给作者介绍个女朋友吧！</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay.png">
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/alipay_qr.png" alt="支付宝"></div>
+</a>
+
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/tencent_wechat.png">
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://blog-1256129046.cos.ap-shanghai.myqcloud.com/wx_pay.png" alt="微信"></div>
+</a>
+
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/28/论回收站的重要性/">
+                <span class="level-item">论回收站的重要性</span>
+                <i data-feather="arrow-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="card" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+    <div class="card-content">
+        <p id="juzi" class="has-text-centered">Hello world!</p>
+    </div>
+</div>
 
 
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'fndiSKuwnqiiBu9GFAht6Yuk-MdYXbMMI',
+        app_key: 'WoW2S86eOFWUoF9ORtCjF29d',
+        placeholder: '别让博主寂寞太久哦',
+        visitor: false //访客数
+    });
+</script>
 
 
-
-
+    </div>
+</div>
 
 
 
